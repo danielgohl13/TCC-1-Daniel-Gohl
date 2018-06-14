@@ -24,7 +24,7 @@ A boia conta com auxilio de um modulo de classificação que utilizará o \texti
 
 A utilização de uma plataforma de sistema integrada com uso de microprocessador, contendo várias entradas (digitais e analógicas) irá garantir o suporte para novas extensões como um oxímetro, quer irá medir o nível de oxigênio na água para projetos futuros. Essa placa será importante pois irá interligar a maioria dos sensores e fará a conexão com a central, garantindo que os dados sejam tratados e enviados ao usuário final.
 
-A central contará com um aplicativo de auxílio onde onde serão exibidos os resultados para o usuário, tais como as opções da boia, garantindo uma entrega rápida de informação. Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV} \textcolor{red}{(falar quais serão os filtros)}.
+A central contará com um aplicativo de auxílio onde onde serão exibidos os resultados para o usuário, tais como as opções da boia, garantindo uma entrega rápida de informação. Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV}. O fluxo do sistema pode ser visto na figura \ref{fig:fluxfish}, que descreve como o sistema será, assim como a sequencia dos processos podem ser vistos na figura \ref{fig:seqkraken}.
 
 \begin{figure}[ht]
 	\caption{\label{fig:fluxfish}  Fluxo de funcionamento do sistema proposto.}
@@ -33,6 +33,15 @@ A central contará com um aplicativo de auxílio onde onde serão exibidos os re
     \end{center}
     \legend{Fonte Própria}
 \end{figure}
+
+\begin{figure}[ht]
+	\caption{\label{fig:seqkraken}  Diagrama de sequencia do sistema proposto.}
+	 \begin{center}
+		\includegraphics[width = 0.9\textwidth]			{resources/sequencekraken}
+    \end{center}
+    \legend{Fonte Própria}
+\end{figure}
+
 
 \section{Analise dos dados na central de processamento}
 Após a coleta das imagens, captados pelos sensores de captura as imagens serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} para os filtros de pré-processamento afim de melhorar a qualidade da imagem e adequá-las para classificação caso seja necessário, e \textit{Tensorflow}, previamente modelado utilizando \textit{Inception}, para retreinar as últimas camadas da sua rede neural. 
