@@ -1,6 +1,8 @@
 \section{Visão geral do método proposto}
    
-   O sistema terá um sensor de captura ótica, que ficará submersos em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador.
+   O sistema proposto será uma boia baseada em microcontroladores, que irá utilizar sensores de captura ótica para adquirir imagens subaquáticas em tempo real, o sistema proposto contará com um módulo de classificação em uma central conectada a boia como pode ser visto na figura \ref{fig:bigpic}, onde os dados serão processados e exibidos para o usuário final. 
+   
+   %O sistema terá um sensor de captura ótica, que ficará submersos em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador.
 
 \begin{figure}[ht]
 	\centering
@@ -9,58 +11,91 @@
     \legend{Fonte Própria}
 \end{figure}
 
-\section{Identificação de Objetos utilizando openCV}
-O método utilizado para nessa primeira fase de identificações consiste nas seguintes etapas. Como mostra a Figura~\ref{fig:fluxfish} 
+\section{Sistema computacional de suporte a coleta de imagens em ambientes fluviais: Kraken}
+%\todo{o que será a boia;
+%que sensores irá utilizar;
+%como será a conexão com a centra;
+%como será a centra;
+%falar sobre a possibilidade de adição de sensores;}
+
+O projeto será uma boia que com auxílio de microcontroladores que irão controlar os sistemas integrados ao sistema proposto, como motores e/ou estabilizadores e sensores para detecção de objetos e captura de imagens dentro do ambiente fluvial com alta turbidez, identificando objetos, classificando-os e especulando seu tamanho.
+
+A boia conta com auxilio de um modulo de classificação que utilizará o \textit{framework Tensorflow} que pode ser \textit{modelado} de acordo com a necessidade do ambiente. A imagem será pré-processada antes de ser enviada ao classificador, isso irá garantir que a imagem esteja em perfeitas condições de classificação.
+
+A utilização de uma plataforma de sistema integrada com uso de microprocessador, contendo várias entradas (digitais e analógicas) irá garantir o suporte para novas extensões como um oxímetro, quer irá medir o nível de oxigênio na água para projetos futuros. Essa placa será importante pois irá interligar a maioria dos sensores e fará a conexão com a central, garantindo que os dados sejam tratados e enviados ao usuário final.
+
+A central contará com um aplicativo de auxílio onde onde serão exibidos os resultados para o usuário, tais como as opções da boia, garantindo uma entrega rápida de informação. Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV} \textcolor{red}{(falar quais serão os filtros)}.
 
 \begin{figure}[ht]
-	\caption{\label{fig:fluxfish}  Fluxo da estrutura do método de identificação de peixes.}
+	\caption{\label{fig:fluxfish}  Fluxo de funcionamento do sistema proposto.}
 	 \begin{center}
-		\includegraphics[width = 0.5\textwidth]			{resources/fluxflow}
+		\includegraphics[width = 0.9\textwidth]			{resources/fluxogeral}
     \end{center}
     \legend{Fonte Própria}
 \end{figure}
 
-\subsection{Pré-processamento}
-O pré-processamento da imagem é feito com a correção de cores, alterando seu sistema de cores de RGB para BGR como pode ser visto na figura~\ref{fig:fishp1}. 
-\begin{figure}[H]
-	\caption{\label{fig:fishp1} Alteração do sistema de cores para RGB}
-	\centering
-		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P1}
-    \legend{Fonte Própria}
-\end{figure} 
-Para remoção de ruídos um filtro Gaussiano com outra modificação no sistema de cores é aplicado, facilitando a identificação de alguns pontos na imagem. o resultado pode ser visto na figura~\ref{fig:fishp2} 
-\begin{figure}[H]
-	\caption{\label{fig:fishp2} Aplicação de filtro Gaussiano e alteração do sistema de cores para HSV}
-	\centering
-		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P2}
-    \legend{Fonte Própria}
-\end{figure} 
+\section{Analise dos dados na central de processamento}
+Após a coleta das imagens, captados pelos sensores de captura as imagens serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} para os filtros de pré-processamento afim de melhorar a qualidade da imagem e adequá-las para classificação caso seja necessário, e \textit{Tensorflow}, previamente modelado utilizando \textit{Inception}, para retreinar as últimas camadas da sua rede neural. 
+Após o processamento da imagem, será gerado um relatório sobre os dados processados dessa imagem, exibindo pro usuário o tamanho especulado e o resultado da classificação.
+
+
+\section{Analise dos sensores}
+Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia. dada determinada situação onde a água não está com turbidez a utilização de um sensor pode detectar o ambiente e evitar que a central não necessite utilizar os filtros de pré-processamento nas imagens capturadas, melhorando o tempo de classificação.
+
+
+
+\section{Comunicação da Boia com a Central}
+
+
+
+
+
+%\section{Identificação de Objetos utilizando openCV}
+%O método utilizado para nessa primeira fase de identificações consiste nas seguintes etapas. Como mostra a Figura~\ref{fig:fluxfish} 
+
+
+
+%\subsection{Pré-processamento}
+%O pré-processamento da imagem é feito com a correção de cores, alterando seu sistema de cores de RGB para BGR como pode ser visto na figura~\ref{fig:fishp1}. 
+%\begin{figure}[H]
+%	\caption{\label{fig:fishp1} Alteração do sistema de cores para RGB}
+%	\centering
+%		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P1}
+ %   \legend{Fonte Própria}
+%\end{figure} 
+%Para remoção de ruídos um filtro Gaussiano com outra modificação no sistema de cores é aplicado, facilitando a identificação de alguns pontos na imagem. o resultado pode ser visto na figura~\ref{fig:fishp2} 
+%\begin{figure}[H]
+%	\caption{\label{fig:fishp2} Aplicação de filtro Gaussiano e alteração do sistema de cores para HSV}
+%	\centering
+%		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P2}
+ %   \legend{Fonte Própria}
+%\end{figure} 
 
 %Em seguida a imagem deve ser livradas de alguns ruídos, assim um filtro gaussiano e conversão do sistema de cores serão aplicados. Resultado na Figura~\ref{fig:fishp2} 
 
 
-\subsection{Segmentação e identificação de objetos}
-A máscara de segmentação é baseada nos níveis de cores encontrados na imagem. Dois filtros são criados com espectros de cores diferentes e em seguida mesclados. . o resultado pode ser visto na figura~\ref{fig:fishp3_mask1}, a figura~\ref{fig:fishp5} mostra a exclusão de segmentos não necessários.
-\begin{figure}[H]
-	\caption{\label{fig:fishp3_mask1} Extração das máscaras}
-	\centering
-		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P3_mask1}
-    \legend{Fonte Própria}
-\end{figure}
-\begin{figure}[ht]
-	\caption{\label{fig:fishp5} Exclusão de segmentos}
-	\centering
-		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P5_mask_fishes}
-    \legend{Fonte Própria}
-\end{figure} 
+%\subsection{Segmentação e identificação de objetos}
+%A máscara de segmentação é baseada nos níveis de cores encontrados na imagem. Dois filtros são criados com espectros de cores diferentes e em seguida mesclados. . o resultado pode ser visto na figura~\ref{fig:fishp3_mask1}, a figura~\ref{fig:fishp5} mostra a exclusão de segmentos não necessários.
+%\begin{figure}[H]
+%	\caption{\label{fig:fishp3_mask1} Extração das máscaras}
+%	\centering
+%		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P3_mask1}
+%    \legend{Fonte Própria}
+%\end{figure}
+%\begin{figure}[ht]
+%	\caption{\label{fig:fishp5} Exclusão de segmentos}
+%	\centering
+%		\includegraphics[width = 0.4\textwidth]			{fishes/fish_P5_mask_fishes}
+ %   \legend{Fonte Própria}
+%\end{figure} 
 
-A identificação de objetos na imagem é realizada através da identificação dos maiores pontos encontrados nas máscaras de segmentação, então esses são circulados, gerando a imagem de saída.
-\begin{figure}[H]
-	\caption{\label{fig:fishp5} Saída}
-	 \centering
-		\includegraphics[width = 0.6\textwidth]			{fishes/fish_P7}
-    \legend{Fonte Própria}
-\end{figure}
+%A identificação de objetos na imagem é realizada através da identificação dos maiores pontos encontrados nas máscaras de segmentação, então esses são circulados, gerando a imagem de saída.
+%\begin{figure}[H]
+%	\caption{\label{fig:fishp5} Saída}
+%	 \centering
+%		\includegraphics[width = 0.6\textwidth]			{fishes/fish_P7}
+%    \legend{Fonte Própria}
+%\end{figure}
 
 
 
