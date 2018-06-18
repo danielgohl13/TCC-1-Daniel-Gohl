@@ -1,13 +1,13 @@
 \section{Visão geral do método proposto}
    
-   O sistema proposto será uma boia baseada em microcontroladores, que irá utilizar sensores de captura ótica para adquirir imagens subaquáticas em tempo real, o sistema proposto contará com um módulo de classificação em uma central conectada a boia como pode ser visto na figura \ref{fig:bigpic}, onde os dados serão processados e exibidos para o usuário final. 
+   O sistema proposto será um USV (\textit{Unmanned Surface Vehicle}), mas chamaremos de Boia, que será baseada em microcontroladores, que irá utilizar sensores de captura ótica para adquirir imagens subaquáticas em tempo real, o sistema proposto contará com um módulo de classificação em uma central conectada a boia como pode ser visto na figura \ref{fig:bigpic}, onde os dados serão processados e exibidos para o usuário final. 
    
    %O sistema terá um sensor de captura ótica, que ficará submersos em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador.
 
 \begin{figure}[ht]
 	\centering
     \caption{\label{fig:bigpic}Visão Geral}
-	\includegraphics[width = 0.6\textwidth]{resources/Bigpicture}
+	\includegraphics[width = 0.6\textwidth]{resources/bugpicturefloater}
     \legend{Fonte Própria}
 \end{figure}
 
@@ -24,7 +24,7 @@ A boia conta com auxilio de um modulo de classificação que utilizará o \texti
 
 A utilização de uma plataforma de sistema integrada com uso de microprocessador, contendo várias entradas (digitais e analógicas) irá garantir o suporte para novas extensões como um oxímetro, quer irá medir o nível de oxigênio na água para projetos futuros. Essa placa será importante pois irá interligar a maioria dos sensores e fará a conexão com a central, garantindo que os dados sejam tratados e enviados ao usuário final.
 
-A central contará com um aplicativo de auxílio onde onde serão exibidos os resultados para o usuário, tais como as opções da boia, garantindo uma entrega rápida de informação. Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV}. O fluxo do sistema pode ser visto na figura \ref{fig:fluxfish}, que descreve como o sistema será, assim como a sequencia dos processos podem ser vistos na figura \ref{fig:seqkraken}.
+A central contará com um aplicativo de auxílio onde onde serão exibidos os resultados para o usuário, tais como as opções da boia, garantindo uma entrega rápida de informação. Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV}. O fluxo do sistema pode ser visto na \autoref{fig:fluxfish}, que descreve como o será o fluxo do sistema.
 
 \begin{figure}[ht]
 	\caption{\label{fig:fluxfish}  Fluxo de funcionamento do sistema proposto.}
@@ -33,6 +33,8 @@ A central contará com um aplicativo de auxílio onde onde serão exibidos os re
     \end{center}
     \legend{Fonte Própria}
 \end{figure}
+
+O diagrama de sequencia representeado pela \autoref{fig:segkraken} mostra a sequencia dos processos do sistema, a interação do usuário com a Central, e da Central com a Boia. As condições caso haja falha nas conexões com os sensores e como procesder caso essas falhas sejam encontrodas.
 
 \begin{figure}[ht]
 	\caption{\label{fig:seqkraken}  Diagrama de sequencia do sistema proposto.}
@@ -47,15 +49,25 @@ A central contará com um aplicativo de auxílio onde onde serão exibidos os re
 Após a coleta das imagens, captados pelos sensores de captura as imagens serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} para os filtros de pré-processamento afim de melhorar a qualidade da imagem e adequá-las para classificação caso seja necessário, e \textit{Tensorflow}, previamente modelado utilizando \textit{Inception}, para retreinar as últimas camadas da sua rede neural. 
 Após o processamento da imagem, será gerado um relatório sobre os dados processados dessa imagem, exibindo pro usuário o tamanho especulado e o resultado da classificação.
 
+\subsection{Pré processamento}
+\subsubsection{}
 
 \section{Analise dos sensores}
 Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia. dada determinada situação onde a água não está com turbidez a utilização de um sensor pode detectar o ambiente e evitar que a central não necessite utilizar os filtros de pré-processamento nas imagens capturadas, melhorando o tempo de classificação.
 
 
 
-\section{Comunicação da Boia com a Central}
+\section{Construção da Boia}
+A estrutura da Boia será baseada na estrutura do \textcolor{red}{POR O NOME DO @} como pode ser observado na \autoref{fig:shubfloater}, que visa baixo custo, utilizando materiais que podem ser encontrados com facilidade, como canos de PVC para a sustentação dos sensores e placas, tendo grande potencial para extensões ou modificações como alterar a estrutura para adicionar outro tipos de motores.
 
-
+\begin{figure}[ht]
+	\caption{\label{fig:shubfloater}  Estrutura de USV proposto por 
+	Shubham.}
+	 \begin{center}
+		\includegraphics[width = 0.8\textwidth]			{resources/shubhamfloater}
+    \end{center}
+    \legend{Fonte: http://www.instructables.com/id/Arduino-RC-Amphibious-Rover/}
+\end{figure}
 
 
 
