@@ -35,7 +35,7 @@ As vantagens de um microcontrolador são mobilidade, baixo consumo de energia, c
 
 Um exemplo de Sistema baseado em microcontrolador é o \textit{Arduino Uno}, que segundo \citeonline{Arduino2018ArduinoRev3}, é uma microcontrolador que possui 14 pinos digitais, 6 portas analógicas, cristal de quartzo com frequência de 16Mhz, conexão USB e entrada de força. O \textit{Arduino} pode ser reescrito várias veezes utilizando um computador e no pior dos casos você poden substituir o microcontrolador com um preço acessível.
 
-Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI} que , que segundo \citeonline{Pi2016DATASHEETCM3L}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral.
+Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI} que , que segundo \citeonline{Pi2016DATASHEETCM3L}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}.
  \begin{figure}[H]
 	\centering
     	\caption{\label{fig:raspsheet} CM3/CM3L Diagrama }
@@ -52,6 +52,8 @@ Segundo \cite{xia:2012} a Internet das Coisas é um conceito que interligará to
 Todos os dispositivos ao nosso redor estarão conectados a internet, isso resultará numa enorme quantidade de dados que terão de ser processados e apresentados sem falhas de forma eficiente. A computação em nuvem pode oferecer uma infraestrutura de ponta a ponta, entre o dispositivo e o servidor satisfazendo essa demanda de qualquer lugar \cite{Gubbi:2013}.
 
 Internet das Coisas é sobre ampliar o escopo de conexões para objetos que não são convencionais de estarem conectados à rede. Por esse motivo uma grande quantidade de soluções de comunicação foram introduzidas, visando o melhor custo energético \cite{siekkinen2012low}. E a utilização dessa visão neste trabalho será onde 
+
+Na tentativa da caracterização da Internet das Coisas, A \autoref{fig:iotoverview} coloca os principais conceitos, tecnologias e padrões na visão desse paradigma, destacando e classificando as diferentes visões que resultam na Internet das Coisas, mostrando o melhor resultado de uma convergência.
 
  \begin{figure}[H]
 	\centering
@@ -90,7 +92,7 @@ Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)
 
 A utilização de UML nesse trabalho se dará pela utilização de diagramas de sequencia, que mostrarão como o fluxo do software irã acontecer. De acordo com \citeonline{rumbaugh2017unified}, diagramas de sequência mostram a iteração em uma forma bidimensional, onde o eixo vertical é o tempo de vida do processo e o eixo horizontal mostra as regras de transição como pode ser visto na figura~\ref{fig:sequencerumbaugh}. %Essas regras são definidas pelas setas que são os processos do software.
 
-Já \citeonline{Cunha2011FormalContext} diz que diagramas de sequencia as ações são organizadas por tempo, mas não exploram as relação dos objetos. Os diagramas de sequencia mostram todo o processo de trocas de mensagens dos objetos, mapeando todo o ambiente mostrando como os objetos colaboram entre si para obter sucesso. 
+Já \citeonline{Cunha2011FormalContext} diz que diagramas de sequencia as ações são organizadas por tempo, mas não exploram as relação dos objetos. Os diagramas de sequencia mostram todo o processo de trocas de mensagens dos objetos, mapeando todo o ambiente mostrando como os objetos colaboram entre si para obter sucesso. Um exemplo é a \autoref{fig:sequencerumbaugh}, que mostra um diagrama de sequencia, com ator, processos e ações que são executas em certa ordem. 
  \begin{figure}[H]
 	\centering
     	\caption{\label{fig:sequencerumbaugh} Diagrama de sequência }

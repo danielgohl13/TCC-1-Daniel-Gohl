@@ -9,7 +9,7 @@ Neste capítulo serão apresentados e discutidos os principais trabalhos existen
 
        Visando documentar o fluxo de execução do método proposto neste trabalho, foi realizado a diagramação do método proposto, utilizando diagramas da UML e caixas, com a especificação de tecnologias como linguagens de programação e métodos encontrados na literatura a serem utilizadas no projeto do sistema computacional proposto neste trabalho. Logo, o sistema proposto é apresentado como um sistema embarcado usando  microcontroladores (neste caso, neste projeto esta sendo testado as plataformas Arduino e Raspberry Pi), sensores óticos, etc. 
 
-       O sistema embarcado proposto será baseado em detecção via um sensor de captura ótica, que ficará submerso em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador. O pré-processamento da imagem é feito com a correção de cores, alterando seu sistema de cores de RGB para BGR. Para remoção de ruídos um filtro Gaussiano com outra modificação no sistema de cores é aplicado, facilitando a identificação de alguns pontos na imagem. A máscara de segmentação é baseada nos níveis de cores encontrados na imagem. Dois filtros estão sendo criados com espectros de cores diferentes e em seguida mesclados. 
+       O sistema embarcado proposto será baseado em detecção via um sensor de captura ótica, que ficará submerso em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador. O pré-processamento da imagem é feito com diversos filtros e processos para correção de anomalias na imagem.
 
        O módulo  de detecção de objetos do sistema proposto, ainda em desenvolvimento, está sendo aperfeiçoado para interagir de forma inteligente com o ambiente observado, isso significa que filtros serão automaticamente aplicados para melhorar a detecção de objetos em ambiente com pouca iluminação e com alta turbidez. Com base na estrutura do sistema computacional proposto, ainda identificamos alguns desafios a serem superados para a conclusão do trabalho proposto, tais como: a integração dos diferentes módulos (exemplo, detecção de objetos) em um único sistema; consumo  energético; estrutura e prototipação dos sistema em ambientes reais como rios. 
 	
@@ -21,12 +21,14 @@ Neste capítulo serão apresentados e discutidos os principais trabalhos existen
 
 
 \section{Análise dos trabalhos correlatos}
+Nesta seção serão serão feitas análises dos trabalhos correlatos, mostrando as diferenças entre o projeto proposto e os trabalhos encontrados, como tecnologias e estruturas utilizads.
 
 \subsection{DeepFish: Accurate underwater live fish recognition with deep architecture}
 Um \textit{framework} baseado em uma \textit{Convolutional Neural Network} foi proposto por \citeonline{Qin:2016} para reconhecimento de peixes em vídeos gravados submersos em água. No trabalho as imagens de fundo são removidas utilizando métodos baseados em decomposição de matrizes esparsas e de baixo nível, removendo assim apenas o fundo da imagem, deixando somente o peixe.
 
 Os dados extraídos são passados para camadas de convolução depois para uma camada não linear, em seguida é feita a classificação utilizando SVM (Support Vector Machine). A taxa de aprendizado diminui a medida que a quantidade de parâmetros são adicionados, necessitando assim de uma otimização no filtro de aprendizado. 
 
+O método do trabalho de \citeonline{Qin2016}, pode ser visto na \autoref{fig:trainignqin}, onde os passos do \textit{framework} são mostrados. Onde os filtros são escolhidos, as imagens processadas pela rede neural profunda e processos para extração de atributos, após essas etapas a saída final alimenta uma máquina de vetor de suporte linear.
 \begin{figure}[h]
 	\caption{\label{fig:trainignqin}\textit{Pipeline} do \textit{framework} proposto.}
 	\begin{center}
