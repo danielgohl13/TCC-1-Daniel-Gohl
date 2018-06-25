@@ -1,15 +1,17 @@
+
 \label{chap:fund_teo}
-	Este capítulo tem como objetivo apresentar a fundamentação teórica para o entendimento deste trabalho, no qual serão abordados conceitos de: Sistemas Embarcados, Modelos Formais para Verificação de Sistemas, Visão Computacional e Reconhecimento de Padrões.
+Este capítulo tem como objetivo apresentar os conceitos e definições abordados neste trabalho, tais como: Sistemas Embarcados, Modelos Formais para Verificação de Sistemas, Visão Computacional e Reconhecimento de Padrões.
   
     
     
 \section{Sistemas Embarcados} 
 
-Sistemas computacionais estão por toda parte e muitos deles estão em computadores pessoais. Esses sistemas embarcados podem ser encontrados em uma grande gama de dispositivos, desde \textit{notebooks, tablets} a jogos eletrônicos portáteis, máquinas de fax, entre outras coisas como eletrodomésticos \cite{vahid:2002}.
+Sistemas computacionais estão por toda parte e muitos deles estão em computadores pessoais\todo{Exemplificar}. Sistemas embarcados são um tipo espeficífico de sistema computacional que pode ser encontrado em uma grande gama de dispositivos, desde \textit{notebooks, tablets} a jogos eletrônicos portáteis, máquinas de fax, entre outras coisas como eletrodomésticos~\cite{vahid:2002}.
 
-\citeonline{vahid:2002} diz que um sistema embarcado é qualquer sistema computacional que não seja um computador pessoal ou \textit{workstation}. \citeonline{heath:2002} define sistemas embarcados como sistemas baseados em microprocessadores ou microcontroladores, construídos para executar uma função específica ou grupos de funções programadas. Os sistemas embarcados não são projetados para serem reprogramados da mesma forma que computadores pessoais.
+Segundo~\citeonline{vahid:2002}, um sistema embarcado é qualquer sistema computacional que não seja um computador pessoal ou \textit{workstation}. \citeonline{heath:2002} define sistemas embarcados como sistemas baseados em microprocessadores ou microcontroladores (ver Seção~\ref{Sect:Micros}), construídos para executar uma \textbf{função específica} ou grupos de funções programadas. Os sistemas embarcados não são projetados para serem reprogramados da mesma forma que computadores pessoais.
 % 
 Um dos exemplos citados por \cite{heath:2002} como sistema embarcado é uma máquina de lavar, que possui vários ciclos de lavagem, painéis para acompanhar os ciclos e controle dos motores, e bombas de água.
+
 
 Já \citeonline{schlett:1998} diz que um sistema embarcado precisa executar uma tarefa específica com o menor custo energético e monetário possível.
 %O custo energético é um dos grandes desafios encontrados no desenvolvimento de sistemas embarcados.
@@ -19,23 +21,30 @@ Neste sentido, segundo \citeonline{vahid:2002}, algumas características de sist
 \end{itemize}
 
 
-.
+\todo[inline]{Descrever como os SE tem impactado os dias atuais, Exemplificar}
  
 
+% =========================================================
 \subsection{Microcontroladores x Microprocessadores}
-        
+\label{Sect:Micros}
+% =========================================================        
 
-Os computadores modernos são baseados em microprocessadores, permitindo-os realizar várias funções, enquanto outros sistemas baseados em microcontroladores, são limitados a apenas um ciclo repetido da mesma tarefa\cite{heath:2002}. Microcontroladores são compostos por vários componentes integrados a ele, como RAM, interface de entrada e saída e uma memória re-programável \cite{white:2011}.
+Os computadores modernos são baseados em microprocessadores\todo{apresentar exemplo com referência}, permitindo-os realizar várias funções, enquanto outros sistemas baseados em microcontroladores, são limitados a apenas um ciclo repetido da mesma tarefa~\cite{heath:2002}. Microcontroladores são compostos por vários componentes integrados a ele, como RAM, interface de entrada e saída e uma memória re-programável~\cite{white:2011}.
 
 %Segundo \citeonline{white:2011} define microcontroladores como processadores com componentes atrelados a ele, com memória re-programável
 
-Sistemas embarcados derivaram de processadores desenvolvidos para o mercado de computadores domésticos, com algumas diferenças no consumo energético, preço e componentes atrelados à \textit{CPU}. Outras diferenças são o tempo de resposta de interrupções, a quantidade de memória e portas paralelas \cite{schlett:1998}.
+Sistemas embarcados derivaram de processadores desenvolvidos para o mercado de computadores domésticos, com algumas diferenças no consumo energético, preço e componentes atrelados à CPU. Outras diferenças são o tempo de resposta de interrupções, a quantidade de memória e portas paralelas \cite{schlett:1998}.
 
-As vantagens de um microcontrolador são mobilidade, baixo consumo de energia, custo, segurança e confiabilidade, uma vez que sistemas embarcados são sistemas modestos, altamente otimizados, realizando tarefas de extremo risco em tempo real. por outro ladro computadores baseados em microprocessadores possuem alto poder de processamento, por um alto custo, tanto energético quanto monetário. %informações do slide, irei citar)
 
-Um exemplo de Sistema baseado em microcontrolador é o \textit{Arduino Uno}, que segundo \citeonline{Arduino2018ArduinoRev3}, é uma microcontrolador que possui 14 pinos digitais, 6 portas analógicas, cristal de quartzo com frequência de 16Mhz, conexão USB e entrada de força. O \textit{Arduino} pode ser reescrito várias veezes utilizando um computador e no pior dos casos você poden substituir o microcontrolador com um preço acessível.
+As vantagens de um microcontrolador são mobilidade, baixo consumo de energia, custo, segurança e confiabilidade, uma vez que sistemas embarcados são sistemas 
+% modestos, 
+altamente otimizados usualmente com baixo poder de processamento, realizando tarefas de extremo risco\todo{descrever} em tempo real. Por outro lado computadores baseados em microprocessadores possuem alto poder de processamento, por um alto custo, tanto energético quanto monetário. %informações do slide, irei citar)
 
-Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI} que , que segundo \citeonline{Pi2016DATASHEETCM3L}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}.
+Um exemplo de um sistema baseado em microcontrolador é o \textit{Arduino Uno} \cite{Arduino2018ArduinoRev3} que é uma microcontrolador que possui $14$ pinos digitais, $6$ portas analógicas, cristal de quartzo com frequência de $16$Mhz, conexão USB e entrada de alimentação eletrica. O \textit{Arduino} pode ser reescrito várias vezes utilizando um computador e no pior dos casos você pode substituir o microcontrolador com um preço acessível.
+
+\todo[inline]{Ampliar a descrição sobre o Arduino}
+
+Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI}, que segundo \citeonline{Pi2016DATASHEETCM3L}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}.
  \begin{figure}[H]
 	\centering
     	\caption{\label{fig:raspsheet} CM3/CM3L Diagrama }
@@ -43,15 +52,24 @@ Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{
     	\legend{Fonte: \cite{Pi2016DATASHEETCM3L}}
 \end{figure}
 
+\todo[inline]{Apresentar exemplos de uso na prática com Raspberry PI}
 
+\todo[inline]{Apresentar um discussão de quando usar Microcontroladores ou Single Board Computers com Microprocessadores}
+
+
+% =========================================================
 \subsection{Internet das Coisas(IoT - Internet of Things)}
-A Internet das Coisas (IoT - \textit{Internet of Things}) é paradigma que está ganhando espaço no cenário moderno de telecomunicações sem fio. Sendo seu conceito básico conectar uma vasta quantidade de coisas ou objetos, fazendo-os interagir entre si para alcançar um objetivo em comum \cite{atzori2010internet}.
+% =========================================================
+
+A Internet das Coisas (IoT - \textit{Internet of Things}) é paradigma que está ganhando espaço no cenário moderno de telecomunicações sem fio. Sendo seu conceito básico conectar uma vasta quantidade de coisas ou objetos (casas, carros, sinais de trânsito e outros), fazendo-os interagir entre si para alcançar um objetivo em comum \cite{atzori2010internet}.
+
 
 Segundo \cite{xia:2012} a Internet das Coisas é um conceito que interligará todos os dispositivos através de sistemas embarcados, formando uma rede de dados inteligente, ubíqua e distribuída. Os dispositivos podem trazer avanços que irão melhorar a qualidade de vida, facilitando a comunicação entre pessoas e dispositivos.
 
 Todos os dispositivos ao nosso redor estarão conectados a internet, isso resultará numa enorme quantidade de dados que terão de ser processados e apresentados sem falhas de forma eficiente. A computação em nuvem pode oferecer uma infraestrutura de ponta a ponta, entre o dispositivo e o servidor satisfazendo essa demanda de qualquer lugar \cite{Gubbi:2013}.
 
-Internet das Coisas é sobre ampliar o escopo de conexões para objetos que não são convencionais de estarem conectados à rede. Por esse motivo uma grande quantidade de soluções de comunicação foram introduzidas, visando o melhor custo energético \cite{siekkinen2012low}. E a utilização dessa visão neste trabalho será onde 
+Internet das Coisas é sobre ampliar o escopo de conexões para objetos que não são convencionais de estarem conectados à rede. Por esse motivo uma grande quantidade de soluções de comunicação foram introduzidas, visando o melhor custo energético \cite{siekkinen2012low}. 
+% E a utilização dessa visão neste trabalho será onde 
 
 Na tentativa da caracterização da Internet das Coisas, A \autoref{fig:iotoverview} coloca os principais conceitos, tecnologias e padrões na visão desse paradigma, destacando e classificando as diferentes visões que resultam na Internet das Coisas, mostrando o melhor resultado de uma convergência.
 
@@ -62,7 +80,7 @@ Na tentativa da caracterização da Internet das Coisas, A \autoref{fig:iotoverv
     	\legend{Fonte: \cite{atzori2010internet}}
 \end{figure}
 
-
+\todo[inline]{Apresentar um exemplo detalhado de IoT}
 
 \subsection{Baixo consumo de energia}
 Os dispositivos que compõem a Internet das Coisas são caracterizadas por utilizar poucos recursos, em termos de computação e capacidade energética. Isso requer certa atenção, já que novos projetos terão que levar em consideração à eficiência dos recursos e problemas de escalabilidade \cite{atzori2010internet}.
