@@ -170,7 +170,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-  \titulo{DETECÇÃO DE OBJETOS PARCIALMENTE OBSERVÁVEIS EM AMBIENTE AQUÁTICO COM ALTA TURBIDEZ }
+  \titulo{KRAKEN: DETECÇÃO DE OBJETOS PARCIALMENTE OBSERVÁVEIS EM AMBIENTE AQUÁTICO COM ALTA TURBIDEZ }
 
 \autor{PEDRO DANIEL DA SILVA GOHL}
 \local{Boa Vista - RR}
@@ -278,7 +278,8 @@
 % ---
 % Agradecimentos
 % ---
-\begin{agradecimentos}
+% \renewcommand{\resumo}{Sumário}
+\begin{agradecimentos}[Agradecimentos]
 Primeiramente minha mãe, que sempre fez tudo por mim e pelos meus irmãos, valeu mãe, e também a minha família, nisso incluo meu pai, tio, irmãos e a família da minha ex-namorada e grande amiga, Eduarda, que me adotou.
 
 \centering \textit{Vereor Nox}
@@ -289,12 +290,12 @@ Primeiramente minha mãe, que sempre fez tudo por mim e pelos meus irmãos, vale
 % ---
 % Epígrafe
 % ---
-\begin{epigrafe}
-    \vspace*{\fill}
-	\begin{flushright}
-		\textit{}
-	\end{flushright}
-\end{epigrafe}
+% \begin{epigrafe}
+%     \vspace*{\fill}
+% 	\begin{flushright}
+% 		\textit{}
+% 	\end{flushright}
+% \end{epigrafe}
 % ---
 
 % ---
@@ -303,7 +304,7 @@ Primeiramente minha mãe, que sempre fez tudo por mim e pelos meus irmãos, vale
 
 % resumo em português
 \setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
-\begin{resumo}
+\begin{resumo}[Resumo]
 
 
  \vspace{\onelineskip}
@@ -312,20 +313,21 @@ Primeiramente minha mãe, que sempre fez tudo por mim e pelos meus irmãos, vale
  \textbf{Palavras-chaves}: 
 \end{resumo}
 
-\begin{resumo}[Abstract]
- \begin{otherlanguage*}{english}
-   
-
-   \vspace{\onelineskip}
- 
-   \noindent 
-   \textbf{Key-words}: 
- \end{otherlanguage*}
-\end{resumo}
+% \begin{resumo}[Abstract]
+%  \begin{otherlanguage*}{english}
+%    
+% 
+%    \vspace{\onelineskip}
+%  
+%    \noindent 
+%    \textbf{Key-words}: 
+%  \end{otherlanguage*}
+% \end{resumo}
 % ---
 % inserir lista de ilustrações
 % ---
 \pdfbookmark[0]{\listfigurename}{lof}
+\renewcommand{\listfigurename}{Lista de Figuras}
 \listoffigures*
 \cleardoublepage
 % ---
@@ -355,6 +357,7 @@ Primeiramente minha mãe, que sempre fez tudo por mim e pelos meus irmãos, vale
 % inserir o sumario
 % ---
 \pdfbookmark[0]{\contentsname}{toc}
+\renewcommand{\contentsname}{Sumário}
 \tableofcontents*
 \cleardoublepage
 % ---
