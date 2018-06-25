@@ -95,28 +95,40 @@ Geralmente há restrições no \textit{hardware} e \textit{software}\todo{Aprese
 
 \todo[inline]{Está seção está muito raza, explanar mais e apresentar um técnica para redução de consumo de energia}
 
+
+% =========================================================
 \section{Modelos formais para verificação de sistemas}
+% =========================================================
 %falar sobre verificação de sistemas. A importância e onde é usada. Falar sobre modelos formais. Falando que a seção fala sobre exemplos de modelos formais. 
  
-De acordo com \citeonline{Baier:2008} sistemas de Tecnologia da Informação e Comunicação (TIC) estão crescendo rapidamente, e seu funcionamento de forma eficaz é fundamental. Esses sistemas estão se tornando cada vez mais complexos e estão ganhando espaço no cotidiano através da internet e de todos os tipos de sistemas embarcados. Sistemas TIC estão por toda parte, eles controlam a maioria dos dispositivos de uso cotidiano.
+De acordo com \citeonline{Baier:2008} sistemas de Tecnologia da Informação e Comunicação (TIC) estão crescendo rapidamente, e seu funcionamento de forma eficaz é fundamental. Esses sistemas estão se tornando cada vez mais complexos e estão ganhando espaço no cotidiano através da internet e de todos os tipos de sistemas embarcados. Sistemas TIC estão por toda parte, eles controlam a maioria dos dispositivos de uso cotidiano\todo{Apresenatar exemplos}.
 
 A dependência do uso de sistemas embarcados tornam sua eficácia fundamental para sociedade. Esses sistemas oferecem um bom desempenho em tempo de resposta e capacidade de processamento. O mal funcionamento desses sistemas podem ameaçar nossas vidas, e podem ter consequências financeiras substanciais para o fabricante. Sistemas TIC eficazes são fundamentais para a sobrevivência de uma empresa.
+
+\todo[inline]{Apresentar exemplo de um falha de SE com resultado critico}
 
 O crescimento na complexidade dos sistemas TIC mostram que eles não estão mais isolados, agora podem fazem parte de um grande sistema, conectando e interagindo com vários outros outros componentes, tornando esses sistemas vulneráveis a erros. 
 A concorrência e o não determinismo que são fundamentais para a modelagem dos sistemas integrados, tornando a utilização de técnicas padrões muito difícil.
 
-Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiável. A verificação de sistemas trabalha pra estabelecer que o produto possua certas propriedades, como certificar que o sistema não entre em uma situação de \textit{deadlock}. A falha é encontrada quando o sistema não cumpre todas as propriedades especificadas.
+Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiável. A verificação de sistemas trabalha pra estabelecer que o produto possua certas propriedades, como certificar que o sistema não entre em uma situação de \textit{deadlock}. A falha é encontrada quando o sistema não cumpre todas as propriedades especificadas\todo{Adicionar referência}.
 
 
 %\subsection{Máquina finita de Estados}
 %yMáquina finita de estados é um automato que ajuda a demonstrar o fluxo de um sistema computacional. (pré-texto) 
 
+% =========================================================
 \subsection{UML}
+% =========================================================
+
 Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)} é uma linguagem de modelagem visual que tem como intuito de utilizar todos os métodos de desenvolvimento de software, extraindo melhor para especificar, visualizar, desenvolver e documentar os artefatos de um sistema em nível de software, capturando estáticas informais e dinâmicas do comportamento de um sistema.
 
-A utilização de UML nesse trabalho se dará pela utilização de diagramas de sequencia, que mostrarão como o fluxo do software irã acontecer. De acordo com \citeonline{rumbaugh2017unified}, diagramas de sequência mostram a iteração em uma forma bidimensional, onde o eixo vertical é o tempo de vida do processo e o eixo horizontal mostra as regras de transição como pode ser visto na figura~\ref{fig:sequencerumbaugh}. %Essas regras são definidas pelas setas que são os processos do software.
+\todo[inline]{Descrever os tipos de diagramas das UML e o objetivo de cada um deles.}
 
-Já \citeonline{Cunha2011FormalContext} diz que diagramas de sequencia as ações são organizadas por tempo, mas não exploram as relação dos objetos. Os diagramas de sequencia mostram todo o processo de trocas de mensagens dos objetos, mapeando todo o ambiente mostrando como os objetos colaboram entre si para obter sucesso. Um exemplo é a \autoref{fig:sequencerumbaugh}, que mostra um diagrama de sequencia, com ator, processos e ações que são executas em certa ordem. 
+A utilização de UML nesse trabalho se dará pela utilização de diagramas de sequência que mostrarão como o fluxo do software irã ocorrer. De acordo com \citeonline{rumbaugh2017unified}, diagramas de sequência mostram a iteração em uma forma bidimensional, onde o eixo vertical é o tempo de vida do processo e o eixo horizontal mostra as regras de transição como pode ser visto na Figura~\ref{fig:sequencerumbaugh}. %Essas regras são definidas pelas setas que são os processos do software.
+
+\todo[inline]{Explicar a Figura~\ref{fig:sequencerumbaugh}}
+
+Já \citeonline{Cunha2011FormalContext} diz que diagramas de sequência as ações são organizadas por tempo\todo{Corrigir esta frase}, mas não exploram as relação dos objetos. Os diagramas de sequência mostram todo o processo de trocas de mensagens dos objetos, mapeando todo o ambiente mostrando como os objetos colaboram entre si para obter sucesso. Um exemplo é a \autoref{fig:sequencerumbaugh}, que mostra um diagrama de sequencia, com ator, processos e ações que são executas em certa ordem. 
  \begin{figure}[H]
 	\centering
     	\caption{\label{fig:sequencerumbaugh} Diagrama de sequência }
