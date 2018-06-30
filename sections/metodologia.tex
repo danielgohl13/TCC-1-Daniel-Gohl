@@ -67,7 +67,13 @@ O diagrama de sequência representeado pela \autoref{fig:seqkraken} mostra a seq
     \legend{Fonte Própria}
 \end{figure}
 
-\todo[inline]{O diagrama UML deve ser explicado e detalhado o seu funcionamento}
+Detalhando o diagrama \autoref{fig:seqkraken}:
+\begin{itemize}
+    \item Usuário: o usuário receberá os \textit{feedbacks} através do aplicativo;
+    \item Aplicativo: o aplicativo será responsável de entregar as mensagens para o usuário, e manusear a Central (conexão e sensores);
+    \item Módulo de Classificação: Consiste em um módulo localizado na aplicação que será responsável por analisar, processar e classificar a imagem;
+    \item Boia (Board / Câmera): A Boia que estará conectada à aplicação, onde estarão contidos os sensores e será responsável por adquirir imagens e as enviá-las. 
+\end{itemize}
 
 
 \section{Análise dos dados na central de processamento}
@@ -79,50 +85,61 @@ Após o processamento da imagem, será gerado um relatório sobre os dados proce
 \begin{figure}[ht]
 	\centering
     \caption{\label{fig:fluxoprocesso}Fluxo de Processos do Sistema Computacional Proposto}
-	\includegraphics[width = 1\textwidth]{resources/fluxo-de-processo.png}
+	\includegraphics[width = 0.8\textwidth]{resources/fluxo-de-processo.png}
     \legend{Fonte Própria}
 \end{figure}
 
 \subsection{Pré processamento}
-A etapa de pré-processamento consiste em verificar a qualidade da imagem para decidir se ela, vai passar por certas etapas de processamento para melhorias na imagem, caso a imagem esteja apta a classificaçao a mesma será enviada  deve ou não ser enviada para o módulo de pré-processamento. Dada a situação onde o ambiente observado não tem suas águas turvas o envio para o módulo de classificação
+A etapa de pré-processamento consiste em verificar a qualidade da imagem para decidir se ela, vai passar por certas etapas de processamento para melhorias na imagem, caso a imagem esteja apta a classificação a mesma será enviada  deve ou não ser enviada para o módulo de pré-processamento. Dada a situação onde o ambiente observado não tem suas águas turvas o envio para o módulo de classificação
 
 
 \begin{figure}[ht]
 	\centering
     \caption{\label{fig:bigpic}Fluxo de Pré-processamento}
-	\includegraphics[width = 0.8\textwidth]{resources/fluxoprocessamento.png}
+	\includegraphics[width = 0.7\textwidth]{resources/fluxoprocessamento.png}
     \legend{Fonte Própria}
 \end{figure}
 
-\subsubsection{Homomorphic filtering}
-De acordo com \citeonline{bazeille2006}, o filtro homomórfico pode ser utilizado pra corrigir os problemas de iluminação e melhorar o contraste da iamgem
-O filtro homomórfico é usado para corrigir
+\subsubsection{Filtro Homomórfico}
+De acordo com \citeonline{bazeille2006}, o filtro homomórfico pode ser utilizado para corrigir os problemas de iluminação não uniforme e melhorar o contraste da imagem, aprimorando a nitidez da imagem ao mesmo tempo. Um exemplo do resultado da utilização pode ser visto na \autoref{fig:homomo}.
 
-The homomorphic filtering is used to correct non uniform illumi- nation and to enhance contrasts in the image. It’s a frequency filtering, preferred to others techniques [4][8] because it corrects non uniform lighting and sharpens the edges at the same time.
+\begin{figure}[ht]
+	\centering
+    \caption{\label{fig:homomo}Resultado da utilização do filtro homomórfico no método do trabalho de \citeonline{bazeille2006}}
+	\includegraphics[width = 0.4\textwidth]{resources/homomo1.png}
+    \legend{Adaptada de \citeonline{bazeille2006}}
+\end{figure}
 
 
-\subsubsection{Anisotropic filtering}
 
- Anisotropic filtering allows us to simplify image features to improve image segmentation. This filter smooths the image in homogeneous area but preserves edges and enhance them. It is used to smooth textures and reduce artifacts by deleting small edges amplified by homomorphic filtering.
+\subsubsection{Filtro Anisotrópico}
+Segundo \citeonline{bazeille2006}, o filtro anisotrópico permite simplificar os atributos da imagem afim de aprimorar a segmentação da mesma, suavizando a imagem em uma área homogênea, preservando as arestas e as melhorando. Esse filtro é utilizado para remover alguns ruídos nas arestas causados pelo filtro homomórfico. Um exemplo da utilização do filtro pode ser visto na \autoref{fig:anisotop}. 
+
+\begin{figure}[ht]
+	\centering
+    \caption{\label{fig:anisotop}Resultado da utilização do filtro anisotrópico método do trabalho de \citeonline{bazeille2006}}
+	\includegraphics[width = 0.4\textwidth]{resources/anisitrop.png}
+    \legend{Adaptada de \citeonline{bazeille2006}}
+\end{figure}
 
 
-\section{Análise dos sensores}
+%\section{Análise dos sensores}
 
- Dada determinada situação onde a água não está com turbidez a utilização de um sensor pode detectar o ambiente e evitar que a central não necessite utilizar os filtros de pré-processamento nas imagens capturadas, melhorando o tempo de classificação.
+ %Dada determinada situação onde a água não está com turbidez a utilização de um sensor pode detectar o ambiente e evitar que a central não necessite utilizar os filtros de pré-processamento nas imagens capturadas, melhorando o tempo de classificação.
 
-Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia.
+%Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia.
 
 
 
 \section{Construção da Boia}
 
-A estrutura da Boia, que visa baixo custo, utilizará materiais que podem ser encontrados com facilidade, como canos de PVC para a sustentação dos sensores e placas, tendo grande potencial para extensões ou modificações como alterar a estrutura para adicionar outro tipos de motores.
+A estrutura da Boia, que é ilustrada na \autoref{fig:bigpic}, que visa baixo custo, utilizará materiais que podem ser encontrados com facilidade, como canos de PVC para a sustentação dos sensores e placas, tendo grande potencial para extensões ou modificações como alterar a estrutura para adicionar outro tipos de motores.
+\todo[inline]{Vou adicionar mais uma ilustração explicando onde irão ficar os sensores.}
 
 
-\todo[inline]{Está seção está bem dificil ainda tem muito trabalho a ser feito, sugiro reescrever. Lembrando que cada etap deve alimentar a próxima conforme o fluxo}
+%\section{A Boia no futuro}
+%Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia.
 
-\section{A Boia no futuro}
-Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia.
 %\section{Identificação de Objetos utilizando openCV}
 %O método utilizado para nessa primeira fase de identificações consiste nas seguintes etapas. Como mostra a Figura~\ref{fig:fluxfish} 
 
