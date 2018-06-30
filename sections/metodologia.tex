@@ -1,18 +1,22 @@
 \label{chapter:metodo}
 \section{Visão geral do método proposto}
    
-O sistema computacional proposto será estruturado em forma de boia aquatica, que será composta com microcontroladores, e sensores para análise da água e para a captura ótica, visando adquirir imagens subaquáticas em tempo real. O sistema proposto contará com um módulo de classificação em uma central conectada a boia como pode ser visto na Figura \ref{fig:bigpic}, onde os dados serão processados e exibidos para o usuário final. 
+O sistema computacional proposto será estruturado em forma de boia aquática, que será composta com microcontroladores, sensores para análise da água e para a captura ótica, visando adquirir imagens subaquáticas em tempo real. O sistema proposto contará com um módulo de classificação em uma central conectada, onde os dados serão processados e exibidos para o usuário final. 
+
+A interação com a Boia (ainda me desenvolvimento), será através de uma conexão sem fio, como pode ser visto na \autoref{fig:bigpic}, visando mais praticidade para o usuário final, assim como facilidade de transporte da Boia, uma vez que a Boia pode ser energizada utilizando um painel solar.
+
+ 
    
 %O sistema terá um sensor de captura ótica, que ficará submersos em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador.
 
 \begin{figure}[ht]
 	\centering
     \caption{\label{fig:bigpic}Visão Geral}
-	\includegraphics[width = 0.6\textwidth]{resources/bugpicturefloater}
+	\includegraphics[width = \textwidth]{resources/bugpicturefloater}
     \legend{Fonte Própria}
 \end{figure}
 
-\todo[inline]{Descrever a imagem, na imagem tb não tem a parte da central}
+Na \autoref{fig:bigpic}, podemos ver como será o funcionamento do sistema computacional proposto em uma situação hipotética, e na \autoref{fig:storyb}, podemos ver como será feita a interação da Boia com a Central, mostrando suas etapas e telas. 
 
 \section{Sistema computacional de suporte a coleta de imagens em ambientes fluviais: Kraken}
 %\todo{o que será a boia;
@@ -21,91 +25,104 @@ O sistema computacional proposto será estruturado em forma de boia aquatica, qu
 %como será a centra;
 %falar sobre a possibilidade de adição de sensores;}
 
-O projeto será uma boia que com auxílio de microcontroladores que irão controlar os sistemas integrados ao sistema proposto, como motores e/ou estabilizadores e sensores para detecção de objetos e captura de imagens dentro do ambiente fluvial com alta turbidez, identificando objetos, classificando-os e especulando seu tamanho.
 
-\todo[inline]{O Texto acima está muito similar ao do ínicio modificar e ampliar a descrição de onde o sistema poderá ser utilizado}
+A Boia proposta contará com microcontroladores que serão responsáveis por gerenciar os sistemas integrados à mesma, como motores e/ou estabilizadores e sensores para detecção de objetos e captura de imagens dentro do ambiente fluvial com alta turbidez, identificando objetos, classificando-os e especulando seu tamanho. A Boia servirá para facilitar muitas atividades, por exemplo, a prática de mergulho em áreas de risco, onde a visibilidade é quase nula.
 
-A boia conta com auxílio de um módulo de classificação  de imagens que pode ser \textit{modelado} de acordo com a necessidade do ambiente, em especifico neste trabalho iremos adotar o \textit{framework Tensorflow}. A imagem será pré-processada antes de ser enviada ao classificador, isso irá garantir que a imagem esteja em perfeitas condições de classificação.
+A utilização de uma plataforma de sistema integrada (\textit{Single Board Computer}) com uso de microprocessador, contendo várias entradas (digitais e analógicas), irá garantir o suporte para novas extensões como um oxímetro, que irá medir o nível de oxigênio na água. O uso do microprocessador será o meio para interligar a maioria dos sensores e fará a conexão com a central, garantindo que os dados sejam tratados e enviados ao usuário final.
 
-A utilização de uma plataforma de sistema integrada com uso de microprocessador, contendo várias entradas (digitais e analógicas) irá garantir o suporte para novas extensões como um oxímetro, quer irá medir o nível de oxigênio na água. O uso do microprocessador será o meio para interligar a maioria dos sensores e fará a conexão com a central, garantindo que os dados sejam tratados e enviados ao usuário final.
-
-A central contará com um aplicativo de auxílio, onde serão exibidos os resultados para o usuário, tais como os dados coletados pela boia, garantindo uma entrega rápida de informação. Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV}. O fluxo do sistema pode ser visto na \autoref{fig:fluxfish}, que descreve como o será o fluxo do sistema.
-
-\todo[inline]{O texto acima está muito confuso, mistura a classificação com as funções da boia, corrigir. Tudo deve se integrar e comunicar está faltando ordem.}
 
 \begin{figure}[ht]
-	\caption{\label{fig:fluxfish}  Fluxo de funcionamento do sistema proposto.}
+	\centering
+    \caption{\label{fig:storyb}\textit{Storyboard}}
+	\includegraphics[width = 1 \textwidth]{resources/storyboard.png}
+    \legend{Fonte Própria}
+\end{figure}
+
+A \autoref{fig:storyb} ilustra como serão as etapas de interação da Boia com a Central, que contará com um aplicativo de auxílio, onde serão exibidos os resultados para o usuário, tais como os dados coletados pela boia, garantindo uma entrega rápida de informação. 
+
+Os dados classificados terão seus tamanhos especulados, e as imagens serão tratadas usando filtros com a biblioteca \textit{OpenCV}. A imagem será pré-processada antes de ser enviada ao classificador, isso irá garantir que a imagem esteja em perfeitas condições de classificação.
+
+
+Além do aplicativo de auxilio, o sistema conta com um modulo de classificação de imagens que pode ser \textit{modelado} de acordo com a necessidade do ambiente, em especifico neste trabalho iremos adotar o \textit{framework Tensorflow}. 
+
+
+
+\begin{figure}[ht]
+	\caption{\label{fig:fluxcentral}  Fluxo de funcionamento do sistema proposto.}
 	 \begin{center}
-		\includegraphics[width = 0.9\textwidth]			{resources/fluxogeral}
+		\includegraphics[width = 0.5\textwidth]			{resources/Fluxo-central}
     \end{center}
     \legend{Fonte Própria}
 \end{figure}
 
-\todo[inline]{O Fluxo deve ser explicado e detalhado o seu funcionamento}
+Como demonstra a \autoref{fig:fluxcentral} o fluxo do sistema com a inicialização da aplicação, onde os módulos serão exibidos, dando opção para usuário abrir a aplicação para classificar e gerar o relatório da imagem. Em seguida a verificação se a Boia está conectada a Central e caso não esteja uma mensagem é retornada informando para o usuário que a conexão falhou, caso contrário, uma requisição de imagem é solicitada à Boia, onde mais uma vez será verificada a conexão com o sensor óptico, enviando mensagem de falha caso esteja desconectado. Uma vez que o a imagem é enviada para a Central, o módulo de classificação irá pré-processar a imagem caso seja necessário, e quando a imagem estiver adequada será processada e um relatório será gerado e exibido para o usuário.
 
-
-O diagrama de sequência representeado pela \autoref{fig:segkraken} mostra a sequência de interações do sistema, tais como: a interação do usuário com a Central; e da Central com a Boia. As condições caso haja falha nas conexões com os sensores e como proceder caso essas falhas sejam encontrodas.
+O diagrama de sequência representeado pela \autoref{fig:seqkraken} mostra a sequência de interações do sistema, tais como: a interação do usuário com a Central; e da Central com a Boia. As condições caso haja falha nas conexões com os sensores e como proceder caso essas falhas sejam encontradas.
 
 \begin{figure}[ht]
 	\caption{\label{fig:seqkraken}  Diagrama de sequencia do sistema proposto.}
 	 \begin{center}
-		\includegraphics[width = 0.9\textwidth]			{resources/sequencekraken}
+		\includegraphics[width = 1\textwidth]			{resources/sequencekraken}
     \end{center}
     \legend{Fonte Própria}
 \end{figure}
 
-\todo[inline]{As imagens não estão em ordem}
-
 \todo[inline]{O diagrama UML deve ser explicado e detalhado o seu funcionamento}
 
 
-\section{Analise dos dados na central de processamento}
+\section{Análise dos dados na central de processamento}
 
-Após a coleta das imagens, captados pelos sensores de captura as imagens\todo{exemplificar sensores} serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} para os filtros de pré-processamento afim de melhorar a qualidade da imagem, caso seja necessário, e adequá-las para classificação usando o \textit{Tensorflow}, previamente modelado utilizando \textit{Inception}\todo{Descrever o que é o Inception}, para retreinar as últimas camadas da sua rede neural\todo{Descrever pq isto é feito}. 
-Após o processamento da imagem, será gerado um relatório sobre os dados processados dessa imagem, exibindo pro usuário o tamanho especulado\todo{Como o tamanho será calculado} e o resultado da classificação\todo{Qual será o tipo de saida desta classificação?}.
+Como ilustra a \autoref{fig:fluxoprocesso}, após a coleta das imagens captados pelos sensores de captura (como câmeras) as imagens serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} para os filtros de pré-processamento afim de melhorar a qualidade da imagem, caso seja necessário, e adequá-las para classificação usando o \textit{Tensorflow}, previamente modelado utilizando \textit{Inception}, para retreinar as últimas camadas da sua rede neural. afim de . 
+Após o processamento da imagem, será gerado um relatório sobre os dados processados dessa imagem e o resultado da classificação, exibindo um infográfico mostrando os resultados.
+
+
+\begin{figure}[ht]
+	\centering
+    \caption{\label{fig:fluxoprocesso}Fluxo de Processos do Sistema Computacional Proposto}
+	\includegraphics[width = 1\textwidth]{resources/fluxo-de-processo.png}
+    \legend{Fonte Própria}
+\end{figure}
 
 \subsection{Pré processamento}
+A etapa de pré-processamento consiste em verificar a qualidade da imagem para decidir se ela, vai passar por certas etapas de processamento para melhorias na imagem, caso a imagem esteja apta a classificaçao a mesma será enviada  deve ou não ser enviada para o módulo de pré-processamento. Dada a situação onde o ambiente observado não tem suas águas turvas o envio para o módulo de classificação
 
-\todo[inline]{Adicionar texto de instrodução a seção, explicando a razão desta etapa.}
-\todo{place-holder}
+
+\begin{figure}[ht]
+	\centering
+    \caption{\label{fig:bigpic}Fluxo de Pré-processamento}
+	\includegraphics[width = 0.8\textwidth]{resources/fluxoprocessamento.png}
+    \legend{Fonte Própria}
+\end{figure}
 
 \subsubsection{Homomorphic filtering}
+De acordo com \citeonline{bazeille2006}, o filtro homomórfico pode ser utilizado pra corrigir os problemas de iluminação e melhorar o contraste da iamgem
+O filtro homomórfico é usado para corrigir
 
-\todo[inline]{Texto em inglês??????}
 The homomorphic filtering is used to correct non uniform illumi- nation and to enhance contrasts in the image. It’s a frequency filtering, preferred to others techniques [4][8] because it corrects non uniform lighting and sharpens the edges at the same time.
 
 
-\todo{place-holder}\subsubsection{Anisotropic filtering}
-\todo[inline]{Texto em inglês??????}
+\subsubsection{Anisotropic filtering}
+
  Anisotropic filtering allows us to simplify image features to improve image segmentation. This filter smooths the image in homogeneous area but preserves edges and enhance them. It is used to smooth textures and reduce artifacts by deleting small edges amplified by homomorphic filtering.
 
 
 \section{Análise dos sensores}
-Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia. dada determinada situação onde a água não está com turbidez a utilização de um sensor pode detectar o ambiente e evitar que a central não necessite utilizar os filtros de pré-processamento nas imagens capturadas, melhorando o tempo de classificação.
 
-\todo[inline]{Confuso, a etapa será no futuro, não faz parte do método?}
+ Dada determinada situação onde a água não está com turbidez a utilização de um sensor pode detectar o ambiente e evitar que a central não necessite utilizar os filtros de pré-processamento nas imagens capturadas, melhorando o tempo de classificação.
+
+Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia.
 
 
 
 \section{Construção da Boia}
 
-A estrutura da Boia será baseada na estrutura representada pela  \autoref{fig:shubfloater}, que visa baixo custo, utilizando materiais que podem ser encontrados com facilidade, como canos de PVC para a sustentação dos sensores e placas, tendo grande potencial para extensões ou modificações como alterar a estrutura para adicionar outro tipos de motores.
+A estrutura da Boia, que visa baixo custo, utilizará materiais que podem ser encontrados com facilidade, como canos de PVC para a sustentação dos sensores e placas, tendo grande potencial para extensões ou modificações como alterar a estrutura para adicionar outro tipos de motores.
 
-\begin{figure}[ht]
-	\caption{\label{fig:shubfloater}  Estrutura de USV proposto por 
-	Shubham.}
-	 \begin{center}
-		\includegraphics[width = 0.8\textwidth]			{resources/shubhamfloater}
-    \end{center}
-    \legend{Fonte: http://www.instructables.com/id/Arduino-RC-Amphibious-Rover/}
-\end{figure}
-
-\todo[inline]{Os meus comentários sobre está imagem não foram implementados}
-
-\todo[inline]{O ideal nesta parte é vc apresentar os componentes e uma possivel forma de construção e validação do prototipo}
 
 \todo[inline]{Está seção está bem dificil ainda tem muito trabalho a ser feito, sugiro reescrever. Lembrando que cada etap deve alimentar a próxima conforme o fluxo}
 
+\section{A Boia no futuro}
+Com a possibilidade da adição de extensões à Boia, como sensores de medição de oxigenação da água, a necessidade de analise desses é algo pertinente para o desempenho da boia.
 %\section{Identificação de Objetos utilizando openCV}
 %O método utilizado para nessa primeira fase de identificações consiste nas seguintes etapas. Como mostra a Figura~\ref{fig:fluxfish} 
 
