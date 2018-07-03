@@ -50,6 +50,7 @@ Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{
     	\legend{Fonte:\citeonline{RaspberryPi2016DATASHEETCM3L} }
 \end{figure}
 
+\label{jain:raspberry}
 Um bom exemplo de um sistema construído utilizando um \textit{Single Board Computer}, é o sistema proposto por \citeonline{jain2014raspberry}, que utiliza Raspberry Pi para automação residencial através da internet utilizando e-mail. 
 
 
@@ -76,7 +77,16 @@ Na tentativa da caracterização da Internet das Coisas, A \autoref{fig:iotoverv
     	\legend{Fonte: \cite{atzori2010internet}}
 \end{figure}
 
-\todo[inline]{Apresentar um exemplo detalhado de IoT}
+O sistema proposto por \citeonline{jain2014raspberry}, mostra uma placa de sistema integrado, que possibilita automação residencial através da utilização de e-mails. O sistema funciona inicializando o ambiente e logando o e-mail do usuário, em seguida ele lê os assuntos dos e-mails, comparados com os comandos armazenados anteriormente em um banco de dados. Esses comandos são usados para controlar os dispositivos da casa. Segundo \cite{jain2014raspberry}, o \textit{Raspberry Pi} foi escolhido como unidade de processamento por seus benefícios e custos econômicos. 
+
+A \autoref{fig:jainraspberr} ilustra como a configuração do sistema proposto, sua conexão e controle dos relês que controlam os dispositivos interligados. 
+
+ \begin{figure}[H]
+	\centering
+    	\caption{\label{fig:jainraspberr} Visão do sistema proposto por \citeonline{jain2014raspberry} }
+		\includegraphics[width = 1\textwidth]	{resources/jainraspberry}
+    	\legend{Fonte: \cite{jain2014raspberry}}
+\end{figure}
 
 
 % =========================================================
@@ -111,16 +121,16 @@ De acordo \citeonline{Marwedel:2010}, que descreve uma série de requisitos e ab
 % =========================================================
 %falar sobre verificação de sistemas. A importância e onde é usada. Falar sobre modelos formais. Falando que a seção fala sobre exemplos de modelos formais. 
  
-De acordo com \citeonline{Baier:2008} sistemas de Tecnologia da Informação e Comunicação (TIC) estão crescendo rapidamente, e seu funcionamento de forma eficaz é fundamental. Esses sistemas estão se tornando cada vez mais complexos e estão ganhando espaço no cotidiano através da internet e de todos os tipos de sistemas embarcados. Sistemas TIC estão por toda parte, eles controlam a maioria dos dispositivos de uso cotidiano\todo{Apresenatar exemplos}.
+De acordo com \citeonline{Baier:2008} sistemas de Tecnologia da Informação e Comunicação (TIC) estão crescendo rapidamente, e seu funcionamento de forma eficaz é fundamental. Esses sistemas estão se tornando cada vez mais complexos e estão ganhando espaço no cotidiano através da internet e de todos os tipos de sistemas embarcados. Sistemas TIC estão por toda parte, eles controlam a maioria dos dispositivos de uso cotidiano (como por exemplo um sistema para controle da casa, como o sistema proposto por \citeonline{jain2014raspberry}).
 
-A dependência do uso de sistemas embarcados tornam sua eficácia fundamental para sociedade. Esses sistemas oferecem um bom desempenho em tempo de resposta e capacidade de processamento. O mal funcionamento desses sistemas podem ameaçar nossas vidas, e podem ter consequências financeiras substanciais para o fabricante. Sistemas TIC eficazes são fundamentais para a sobrevivência de uma empresa.
+A dependência do uso de sistemas embarcados tornam sua eficácia fundamental para sociedade. Esses sistemas oferecem um bom desempenho em tempo de resposta e capacidade de processamento. O mal funcionamento desses sistemas podem ameaçar nossas vidas, e podem ter consequências financeiras substanciais para o fabricante. Sistemas TIC eficazes são fundamentais para a sobrevivência de uma empresa \cite{Baier:2008}.
 
 \todo[inline]{Apresentar exemplo de um falha de SE com resultado critico}
 
 O crescimento na complexidade dos sistemas TIC mostram que eles não estão mais isolados, agora podem fazem parte de um grande sistema, conectando e interagindo com vários outros outros componentes, tornando esses sistemas vulneráveis a erros. 
-A concorrência e o não determinismo que são fundamentais para a modelagem dos sistemas integrados, tornando a utilização de técnicas padrões muito difícil.
+A concorrência e o não determinismo que são fundamentais para a modelagem dos sistemas integrados, tornando a utilização de técnicas padrões muito difícil \cite{Baier:2008}.
 
-Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiável. A verificação de sistemas trabalha pra estabelecer que o produto possua certas propriedades, como certificar que o sistema não entre em uma situação de \textit{deadlock}. A falha é encontrada quando o sistema não cumpre todas as propriedades especificadas\todo{Adicionar referência}.
+Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiável. A verificação de sistemas trabalha pra estabelecer que o produto possua certas propriedades, como certificar que o sistema não entre em uma situação de \textit{deadlock}. A falha é encontrada quando o sistema não cumpre todas as propriedades especificadas \cite{Baier:2008}.
 
 
 %\subsection{Máquina finita de Estados}
@@ -130,9 +140,13 @@ Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiáve
 \subsection{UML}
 % =========================================================
 
-Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)} é uma linguagem de modelagem visual que tem como intuito de utilizar todos os métodos de desenvolvimento de software, extraindo melhor para especificar, visualizar, desenvolver e documentar os artefatos de um sistema em nível de software, capturando estáticas informais e dinâmicas do comportamento de um sistema.
+Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)} é uma linguagem de modelagem visual que tem como intuito de utilizar todos os métodos de desenvolvimento de software, extraindo melhor para especificar, visualizar, desenvolver e documentar os artefatos de um sistema em nível de software, capturando estáticas informais e dinâmicas do comportamento de um sistema. Alguns diagramas da UML são:
 
-\todo[inline]{Descrever os tipos de diagramas das UML e o objetivo de cada um deles.}
+\begin{description}
+    \item[]
+\end{description}
+
+
 
 A utilização de UML nesse trabalho se dará pela utilização de diagramas de sequência que mostrarão como o fluxo do software irã ocorrer. De acordo com \citeonline{rumbaugh2017unified}, diagramas de sequência mostram a iteração em uma forma bidimensional, onde o eixo vertical é o tempo de vida do processo e o eixo horizontal mostra as regras de transição como pode ser visto na Figura~\ref{fig:sequencerumbaugh}. %Essas regras são definidas pelas setas que são os processos do software.
 
@@ -261,18 +275,21 @@ Nesta sessão iremos abordar \textit{frameworks} para identificação e classifi
 % \todo{falar sobre aprendizado de máquina na sua utilização no projeto: como caixa preta}
 %De acordo com \cite{papag} As dificuldades na identificação de objetos de interesse do mundo real, como rostos e pessoas são dadas pela complexidade desses tipos de objetos, uma quantidade significante de variedade de cores e texturas e o contraste com o fundo da imagem. Em comparação com a classificação de padrões, onde é necessário decidir entre classes bem definidas, na detecção de objetos é necessário diferenciar a classe de objeto para o que é o resto. 
 
-\todo[inline]{Criar uma seção Aprendizagem de Máquina}
-
 \subsection{\textit{Tensorflow}: Um \textit{Framework} de Código Aberto para Aprendizagem de Máquina}
 
 Tensorflow é um \textit{framework} para operações computacionais, tendo uma grande biblioteca permitindo o desenvolvimento para diferentes plataformas, de \textit{clusters} de servidores até dispositivos móveis. Tensorflow tem grande facilidade de lidar com problemas de aprendizado de máquina e \textit{deep learning}, podendo ser usado em diversos domínios científicos \cite{tensorflow2015}. A utilização do \textit{framework} será de extrema importância nas classificações de imagens que serão processadas.
 
-\todo[inline]{Ampliar a descrição e adição de exemplos}
+O campo de aprendizagem de máquina teve grandes progressos nos últimos anos, conseguindo alcançar níveis de abstração de imagem que alcançam a percepção humana. Um tipo de modelo que tem conseguido bons resultados, alcançando e até mesmo ultrapassando a capacidade humana em tarefas de reconhecimento de imagem são as \textbf{redes neurais convolutivas} (\textit{Convonlutional neural network}) \cite{Tensorflow2018}. Redes convolutivas estão no centro da maioria das soluções para problemas de reconhecimento de imagem \cite{SzegedyVISW15}.
 
-\subsection{YOLO: Detecção de Objetos em Tempo Real}
-\todo{fazer a mesma coisa pro YOLO (mesma coisa do tensorflow)}
+O modelo que será utilizado no desenvolvivento desse trabalho será o \textit{Inception}, que segundo \citeonline{SzegedyVISW15} tem custo computacional bem menor que outros modelos, tornando a sua utilização viável para cenários com recursos limitados como em processamento móvel.
 
-\todo[inline]{Ampliar a descrição e adição de exemplos}
+%============= PODEMOS DEIXAR O YOLO PRO TCC???? =================
+
+
+%\subsection{YOLO: Detecção de Objetos em Tempo Real}
+%\todo{fazer a mesma coisa pro YOLO (mesma coisa do tensorflow)}
+
+%\todo[inline]{Ampliar a descrição e adição de exemplos}
 
 %\section{Aprendizagem de máquina}
 %Falar o que é. onde é usado, mostrar exemplos (muitas imagens), visão geral pra ter uma ideia do que é capaz

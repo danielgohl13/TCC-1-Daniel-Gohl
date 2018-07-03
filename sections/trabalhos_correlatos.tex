@@ -28,11 +28,11 @@ Neste capítulo serão apresentados e discutidos os principais trabalhos existen
 \section{DeepFish: Accurate underwater live fish recognition with deep architecture}
 % ================================================
 
-Um \textit{framework} baseado em uma \textit{Convolutional Neural Network} - CNN\todo{Traduzir} foi proposto por \citeonline{Qin:2016} para reconhecimento de peixes em vídeos gravados submersos em água\todo{Qual tipo? Mar, rio?}. No trabalho as imagens de fundo são removidas utilizando métodos baseados em decomposição de matrizes esparsas e de baixo nível, removendo assim apenas o fundo da imagem, deixando somente o peixe.
+Um \textit{framework} baseado em uma rede neural convolutiva foi proposto por \citeonline{Qin:2016} para reconhecimento de peixes em vídeos gravados submersos em águas oceânicas. No trabalho as imagens de fundo são removidas utilizando métodos baseados em decomposição de matrizes esparsas e de baixo nível, removendo assim apenas o fundo da imagem, deixando somente o peixe.
 
-Os dados extraídos são passados para camadas de convolução depois para uma camada não linear, em seguida é feita a classificação utilizando SVM (Support Vector Machine)\todo{Adicionar referência}. A taxa de aprendizado diminui a medida que a quantidade de parâmetros são adicionados, necessitando assim de uma otimização no filtro de aprendizado. 
+Os dados extraídos são passados para camadas de convolução depois para uma camada não linear, em seguida é feita a classificação utilizando SVM (Support Vector Machine)\cite{cortes1995support}. A taxa de aprendizado diminui a medida que a quantidade de parâmetros são adicionados, necessitando assim de uma otimização no filtro de aprendizado. 
 
-O método do trabalho de \citeonline{Qin2016}, pode ser visto na \autoref{fig:trainignqin}, onde os passos do \textit{framework} são mostrados. Onde os filtros são escolhidos, as imagens processadas pela rede neural profunda e processos para extração de atributos, após essas etapas a saída final alimenta uma máquina de vetor de suporte linear.
+O método do trabalho de \citeonline{Qin:2016}, pode ser visto na \autoref{fig:trainignqin}, onde os passos do \textit{framework} são mostrados. Onde os filtros são escolhidos, as imagens processadas pela rede neural profunda e processos para extração de atributos, após essas etapas a saída final alimenta uma máquina de vetor de suporte linear.
 \begin{figure}[h]
 	\caption{\label{fig:trainignqin}\textit{Pipeline} do \textit{framework} proposto.}
 	\begin{center}
@@ -49,12 +49,12 @@ de imagens, onde a classificação será feita utilizando métodos baseados em \
 %Com o \textit{framework} proposto pelo trabalho espera-se avanços na área de pesquisas sobre reconhecimento de peixes, explorar soluções no reconhecimento de objetos submersos. Beneficiar biológos, ecologistas e fins comerciais como fazendas de peixes.
 
 % ================================================
-\subsection{A Feature Learning and Object Recognition Framework for Underwater Fish Images}
+\section{A Feature Learning and Object Recognition Framework for Underwater Fish Images}
 % ================================================
 
-\citeonline{Chuang2016AImages} propõe um \textit{framework} para reconhecimento de peixes em baixo d'água, que consiste em uma técnica de aprendizagem totalmente não supervisionada e um classificador resistente a erros, conforme \autoref{fig:trainingchuan}. Os dados são iniciados com base em algumas características\todo{Mencionar exemplos de características}, depois passados por alguns critérios de separação\todo{Exemplificar}. 
+\citeonline{Chuang2016AImages} propõe um \textit{framework} para reconhecimento de peixes em baixo d'água, que consiste em uma técnica de aprendizagem totalmente não supervisionada e um classificador resistente a erros, conforme \autoref{fig:trainingchuan}. Os dados são iniciados com base em algumas características (como formato do contorno do peixe), depois passados por alguns critérios de classificação com base nessas características. 
 
-O classificador, tem uma abordagem não supervisionada que gera uma classe de hierarquia binária, onde cada nó é um classificador. Os experimentos mostram que o \textit{framework} proposto é preciso tanto em situações onde a base de dados é públicas quanto em ambientes controlados com alta incerteza.
+A \autoref{fig:trainingchuan} ilustra o classificador, que tem uma abordagem não supervisionada que gera uma classe de hierarquia binária, onde cada nó é um classificador. Os experimentos mostram que o \textit{framework} proposto é preciso tanto em situações onde a base de dados é pública quanto em ambientes controlados com alta incerteza.
 
 \begin{figure}[h]
 	\caption{\label{fig:trainingchuan}Proposta de treinamento não supervisionada.}
@@ -63,8 +63,6 @@ O classificador, tem uma abordagem não supervisionada que gera uma classe de hi
 	\end{center}
 	\legend{Fonte: \cite{Chuang2016AImages}}
 \end{figure}
-   
-\todo[inline]{Seria ideal explicar a \autoref{fig:trainingchuan}}
 
 A utilização do trabalho de \citeonline{Chuang2016AImages} como referência irá auxilar em uma abordagem de aprendizado resistente a erros, que irá auxiliar na confiabilidade de informação, uma vez que o sistema proposto neste trabalho irá auxilar mergulhadores em lugares de riscos, em águas com alta turbidez. 
 
@@ -90,10 +88,10 @@ O sistema proposto por \citeonline{Gentili2000A.} consegue detectar canos e outr
 % Comparado ao trabalho que está sendo desenvolvido, um sistema irá trabalhar na detecção de objetos, e estipulação do tamanho desses objetos, afim de avisar os possíveis perigos que se escondem de baixo d'água.
 
 % ================================================
-\section{Automatic Plankton Image Recognition}
+%\section{Automatic Plankton Image Recognition}
 % ================================================
 
-O trabalho de \citeonline{tang1998automatic} propõe um sistema que utiliza redes neurais para classificação de padrões para identificar um grande número de imagens de plânctons, detectadas em tempo real por um sistema de microscópio de vídeo subaquático rebocado. O sistema que utiliza características granulométricas em escala de cinza como um poderoso descritor de padrão que captura as assinaturas de forma e textura, capaz de detectar automaticamente plânctons, auxiliando no rastreio da proliferação da vida marinha que se alimentam de plânctons e entender o complexo ecossistema marinho.
+%O trabalho de \citeonline{tang1998automatic} propõe um sistema que utiliza redes neurais para classificação de padrões para identificar um grande número de imagens de plânctons, detectadas em tempo real por um sistema de microscópio de vídeo subaquático rebocado. O sistema que utiliza características granulométricas em escala de cinza como um poderoso descritor de padrão que captura as assinaturas de forma e textura, capaz de detectar automaticamente plânctons, auxiliando no rastreio da proliferação da vida marinha que se alimentam de plânctons e entender o complexo ecossistema marinho.
 
 % \begin{figure}[h]
 % 	\caption{\label{fig:tangnet} Quantização vetorial de aprendizado da rede neural.}
@@ -103,19 +101,35 @@ O trabalho de \citeonline{tang1998automatic} propõe um sistema que utiliza rede
 % 	\legend{Fonte: \cite{tang1998automatic}}
 % \end{figure}
 
-\todo[inline]{Descrever como o método de \citeonline{tang1998automatic} pode contribuir com o seu trabalho}
-
 % No trabalho \citeonline{tang1998automatic} o sistema proposto é capaz de identificar plânctons para compreensão de como o ecossistema marinho funciona. Em comparação, o método apresentado neste trabalho de conclusão de curso é proposto um método para detecção, porém não à identificação de objetos em ambiente aquático submersos em águas turvas, mas sim uma classificação de que tipo de objeto e uma especulação do seu tamanho. A classificação será feita utilizando métodos baseados em \textit{Convolutional Neural Network}, utilizando o \textit{framework} \textbf{Tensorflow}.
 
 % ================================================
 \section{Automatic underwater image pre-processing}
 % ================================================
 
-\citeonline{bazeille2006} propõe um algoritmo para processamento e restauração de imagens de ambiente submersos.  Imagens de ambiente submersos sofrem pela perda de distância na captura, distorção de luz, baixo contraste, baixa saturação de cor e outros problemas. Os métodos de processamento de imagens atuais focam em distorção e atenuação causados pela luz e precisam de conhecimento do ambiente que está sendo estudado. O algoritmo proposto pelo trabalho de \citeonline{bazeille2006} é um algoritmo que automatiza o pré-processamento de imagens submersas. O filtro\todo{Qual fitro} reduz as pertubações nas imagens submersas, e melhorando a qualidade da imagem.
-
-\todo[inline]{Descrever como o algoritmo de \citeonline{bazeille2006} funciona, esta bem superficial esta seção}
+\citeonline{bazeille2006} propõe um algoritmo para processamento e restauração de imagens de ambiente submersos.  Imagens de ambiente submersos sofrem pela perda de distância na captura, distorção de luz, baixo contraste, baixa saturação de cor e outros problemas. Os métodos de processamento de imagens atuais focam em distorção e atenuação causados pela luz e precisam de conhecimento do ambiente que está sendo estudado. O algoritmo proposto pelo trabalho de \citeonline{bazeille2006} é um algoritmo que automatiza o pré-processamento de imagens submersas. O algoritmo proposto no trabalho de \citeonline{bazeille2006} reduz as pertubações nas imagens submersas, e melhorando a qualidade da imagem.
 
 
+\begin{figure}[h]
+	\caption{\label{fig:bazeillemetod}Aplicação do algoritmo proposto por \cite{bazeille2006} passo-a-passo.}
+	\begin{center}
+	    \includegraphics[width=0.9\textwidth]{resources/bazeilemetod}
+	\end{center}
+	\legend{Fonte: \cite{Chuang2016AImages}}
+\end{figure}
+
+A \autoref{fig:bazeillemetod}, mostra o resultado da aplicação de diversas técnicas para processamento de imagem e remoção de pertubações, como atenuações de luz.
+
+O algoritmo proposto por \cite{bazeille2006} utiliza algumas técnicas que serão importantes para o pré-processamento das imagens do sistema computacional proposto nesse trabalho de conclusão de curso, algumas dessas técnicas são:
+
+\begin{description}
+    \item[Remoção do padrão \textit{Moiré}]: O padrão Moiré é removido através de uma análise espacial detectando picos nas nas transformadas de \textit{Fourier} e deletando-as assumindo que eles representam padrões Moiré.
+    
+    \item[Redimensionamento de imagem]: Essa transformação padroniza a imagem facilitando a aplicação de algoritmos como as tranformadas de \textit{Fourier}.
+    
+    \item[Filtro homomórfico]: Utilizado para correção de iluminação e aprimorar o contraste da imagem.
+\end{description}
+    
 
 %Processos independentes e sucessivos que corrigem a ilumação não uniforme, supressão de ruídos, melhoria no contraste e ajuste de cor, aplicados com base na detecção de bordas.
 %\section{Foreground Extraction of underwater Videos via Sparse and Low-rank Matrix Decomposition}
