@@ -2,16 +2,17 @@
 
 Neste capítulo serão apresentados e discutidos os principais trabalhos existentes na literatura que se relacionam com os tópicos que formam a base para o desenvolvimento deste trabalho, com ênfase em: Pré-processamento de Imagem, Segmentação e Detecção de Objetos, Pós-processamento e Reconhecimento de Padrões.
 
-    O projeto proposto visa o desenvolvimento de um sistema embarcado, conectado a uma central para processamento de imagem através de uma rede sem fio. O projeto encontra-se em desenvolvimento, já tendo realizado diversas atividades tais como: revisão da literatura; diagramação das etapas do método proposto; e elaboração de um método para identificação e classificação de imagens. 
 
-     
-       %Um dos trabalhos extraídos foi o DeepFish: Accurate underwater live fish recognition with a deep architecture \citeonline{Qin:2016},  que propõe um framework no reconhecimento de objetos dentro d’água, esse trabalho foi fundamental para seleção de um método para identificação de imagens utilizando redes neurais convolutivas.
+% OS TEXTOS ABAIXO DEVEM IR PARA CONCLUSÃO PARCIAIS
+% O projeto proposto visa o desenvolvimento de um sistema embarcado, conectado a uma central para processamento de imagem através de uma rede sem fio. O projeto encontra-se em desenvolvimento, já tendo realizado diversas atividades tais como: revisão da literatura; diagramação das etapas do método proposto; e elaboração de um método para identificação e classificação de imagens. 
 
-       Visando documentar o fluxo de execução do método proposto neste trabalho, foi realizado a diagramação do método proposto, utilizando diagramas da UML e caixas, com a especificação de tecnologias como linguagens de programação e métodos encontrados na literatura a serem utilizadas no projeto do sistema computacional proposto neste trabalho. Logo, o sistema proposto é apresentado como um sistema embarcado usando  microcontroladores (neste caso, neste projeto esta sendo testado as plataformas Arduino e Raspberry Pi), sensores óticos, etc. 
+  
+% Visando documentar o fluxo de execução do método proposto neste trabalho, foi realizado a diagramação do método proposto, utilizando diagramas da UML e caixas, com a especificação de tecnologias como linguagens de programação e métodos encontrados na literatura a serem utilizadas no projeto do sistema computacional proposto neste trabalho. Logo, o sistema proposto é apresentado como um sistema embarcado usando  microcontroladores (neste caso, neste projeto esta sendo testado as plataformas Arduino e Raspberry Pi), sensores óticos, etc. 
 
-       O sistema embarcado proposto será baseado em detecção via um sensor de captura ótica, que ficará submerso em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador. O pré-processamento da imagem é feito com diversos filtros e processos para correção de anomalias na imagem.
+% O sistema embarcado proposto será baseado em detecção via um sensor de captura ótica, que ficará submerso em água, acoplados à uma boia, que terá um conexão sem fio com um celular ou computador. O pré-processamento da imagem é feito com diversos filtros e processos para correção de anomalias na imagem.
 
-       O módulo  de detecção de objetos do sistema proposto, ainda em desenvolvimento, está sendo aperfeiçoado para interagir de forma inteligente com o ambiente observado, isso significa que filtros serão automaticamente aplicados para melhorar a detecção de objetos em ambiente com pouca iluminação e com alta turbidez. Com base na estrutura do sistema computacional proposto, ainda identificamos alguns desafios a serem superados para a conclusão do trabalho proposto, tais como: a integração dos diferentes módulos (exemplo, detecção de objetos) em um único sistema; consumo  energético; estrutura e prototipação dos sistema em ambientes reais como rios. 
+
+% O módulo  de detecção de objetos do sistema proposto, ainda em desenvolvimento, está sendo aperfeiçoado para interagir de forma inteligente com o ambiente observado, isso significa que filtros serão automaticamente aplicados para melhorar a detecção de objetos em ambiente com pouca iluminação e com alta turbidez. Com base na estrutura do sistema computacional proposto, ainda identificamos alguns desafios a serem superados para a conclusão do trabalho proposto, tais como: a integração dos diferentes módulos (exemplo, detecção de objetos) em um único sistema; consumo  energético; estrutura e prototipação dos sistema em ambientes reais como rios. 
 	
 
  
@@ -20,13 +21,16 @@ Neste capítulo serão apresentados e discutidos os principais trabalhos existen
 %A Tabela detalha os resultados gerais de publicações identificadas pela máquina de busca, bem como o número de publicações aceitas em cada um dos filtros executados, de acordo com a expressão de busca executada na biblioteca Scopus. \textcolor{red}{adicionar tabela de resultados.}
 
 
-\section{Análise dos trabalhos correlatos}
-Nesta seção serão serão feitas análises dos trabalhos correlatos, mostrando as diferenças entre o projeto proposto e os trabalhos encontrados, como tecnologias e estruturas utilizads.
+% \section{Análise dos trabalhos correlatos}
+% Nesta seção serão serão feitas análises dos trabalhos correlatos, mostrando as diferenças entre o projeto proposto e os trabalhos encontrados, como tecnologias e estruturas utilizads.
 
-\subsection{DeepFish: Accurate underwater live fish recognition with deep architecture}
-Um \textit{framework} baseado em uma \textit{Convolutional Neural Network} foi proposto por \citeonline{Qin:2016} para reconhecimento de peixes em vídeos gravados submersos em água. No trabalho as imagens de fundo são removidas utilizando métodos baseados em decomposição de matrizes esparsas e de baixo nível, removendo assim apenas o fundo da imagem, deixando somente o peixe.
+% ================================================
+\section{DeepFish: Accurate underwater live fish recognition with deep architecture}
+% ================================================
 
-Os dados extraídos são passados para camadas de convolução depois para uma camada não linear, em seguida é feita a classificação utilizando SVM (Support Vector Machine). A taxa de aprendizado diminui a medida que a quantidade de parâmetros são adicionados, necessitando assim de uma otimização no filtro de aprendizado. 
+Um \textit{framework} baseado em uma \textit{Convolutional Neural Network} - CNN\todo{Traduzir} foi proposto por \citeonline{Qin:2016} para reconhecimento de peixes em vídeos gravados submersos em água\todo{Qual tipo? Mar, rio?}. No trabalho as imagens de fundo são removidas utilizando métodos baseados em decomposição de matrizes esparsas e de baixo nível, removendo assim apenas o fundo da imagem, deixando somente o peixe.
+
+Os dados extraídos são passados para camadas de convolução depois para uma camada não linear, em seguida é feita a classificação utilizando SVM (Support Vector Machine)\todo{Adicionar referência}. A taxa de aprendizado diminui a medida que a quantidade de parâmetros são adicionados, necessitando assim de uma otimização no filtro de aprendizado. 
 
 O método do trabalho de \citeonline{Qin2016}, pode ser visto na \autoref{fig:trainignqin}, onde os passos do \textit{framework} são mostrados. Onde os filtros são escolhidos, as imagens processadas pela rede neural profunda e processos para extração de atributos, após essas etapas a saída final alimenta uma máquina de vetor de suporte linear.
 \begin{figure}[h]
@@ -38,7 +42,9 @@ O método do trabalho de \citeonline{Qin2016}, pode ser visto na \autoref{fig:tr
 \end{figure}
    
 
-Similar ao trabalho de \citeonline{Qin:2016}, o método apresentado nesse trabalho de conclusão de curso propõe um método para detecção, porém não à identificação de imagens. A classificação será feita utilizando métodos baseados em \textit{Convolutional Neural Network} assim como no trabalho de \citeonline{Qin:2016}.
+Similar ao trabalho de \citeonline{Qin:2016}, o método apresentado nesse trabalho de conclusão de curso propõe um método para detecção
+% , porém não à identificação 
+de imagens, onde a classificação será feita utilizando métodos baseados em \textit{Convolutional Neural Network} assim como no trabalho de \citeonline{Qin:2016}.
 
 %Com o \textit{framework} proposto pelo trabalho espera-se avanços na área de pesquisas sobre reconhecimento de peixes, explorar soluções no reconhecimento de objetos submersos. Beneficiar biológos, ecologistas e fins comerciais como fazendas de peixes.
 
