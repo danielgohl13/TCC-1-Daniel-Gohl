@@ -77,7 +77,7 @@ Na tentativa da caracterização da Internet das Coisas, A \autoref{fig:iotoverv
     	\legend{Fonte: \cite{atzori2010internet}}
 \end{figure}
 
-O sistema proposto por \citeonline{jain2014raspberry}, mostra uma placa de sistema integrado, que possibilita automação residencial através da utilização de e-mails. O sistema funciona inicializando o ambiente e logando o e-mail do usuário, em seguida ele lê os assuntos dos e-mails, comparados com os comandos armazenados anteriormente em um banco de dados. Esses comandos são usados para controlar os dispositivos da casa. Segundo \cite{jain2014raspberry}, o \textit{Raspberry Pi} foi escolhido como unidade de processamento por seus benefícios e custos econômicos. 
+O sistema proposto por \citeonline{jain2014raspberry}, mostra uma placa de sistema integrado, que possibilita automação residencial através da utilização de e-mails. O sistema funciona inicializando o ambiente e logando o e-mail do usuário, em seguida ele lê os assuntos dos e-mails, comparados com os comandos armazenados anteriormente em um banco de dados. Esses comandos são usados para controlar os dispositivos da casa. Segundo \citeonline{jain2014raspberry}, o \textit{Raspberry Pi} foi escolhido como unidade de processamento por seus benefícios e custos econômicos. 
 
 A \autoref{fig:jainraspberr} ilustra como a configuração do sistema proposto, sua conexão e controle dos relês que controlam os dispositivos interligados. 
 
@@ -113,7 +113,7 @@ De acordo \citeonline{Marwedel:2010}, que descreve uma série de requisitos e ab
     \item \textbf{Propriedades não-funcionais}: Sistemas embarcados em desenvolvimento devem possuir um número de propriedades não-funcionais, como tolerância a falha, tamanho, extensibilidade, perspectiva de vida, consumo energético, peso e outros.
 \end{itemize}
 
-\citeonline{Marwedel:2010} ainda afirma que melhorar as tecnologias de baterias nos ajudará a consumir mais energia, mas o limitação térmica nos impede de utilizar essa energia por muito tempo, devido a problemas de superaquecimento do dispositivo. Devido a esses problemas de temperatura, dispositivos estão sendo projetado com sensores para detectar quando há superaquecimento, regulando o dispositivo para o evitar que isso aconteça. 
+\citeonline{Marwedel:2010} ainda afirma que melhorar as tecnologias de baterias, nos ajudará a conseguir uma melhor duração para baterias, mas a limitação térmica nos impede de utilizar essa energia por muito tempo, devido a problemas de superaquecimento do dispositivo. Devido a esses problemas de temperatura, dispositivos estão sendo projetado com sensores para detectar quando há superaquecimento, regulando o dispositivo para o evitar que isso aconteça. 
 
 
 % =========================================================
@@ -140,26 +140,42 @@ Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiáve
 \subsection{UML}
 % =========================================================
 
-Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)} é uma linguagem de modelagem visual que tem como intuito de utilizar todos os métodos de desenvolvimento de software, extraindo melhor para especificar, visualizar, desenvolver e documentar os artefatos de um sistema em nível de software, capturando estáticas informais e dinâmicas do comportamento de um sistema. Alguns diagramas da UML são:
+Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)} é uma linguagem de modelagem visual que tem como intuito de utilizar todos os métodos de desenvolvimento de software, extraindo melhor para especificar, visualizar, desenvolver e documentar os artefatos de um sistema em nível de software, capturando estáticas informais e dinâmicas do comportamento de um sistema. Alguns diagramas da UML de acordo com \citeonline{rumbaugh2017unified} são:
 
 \begin{description}
-    \item[]
+    \item[Diagrama de Classe]: Os principais componentes do diagrama de classe são classes e suas relações, associação e generalização, mostrando algumas dependências e utilização de cada elemento.
+        
+    \item[Diagrama de Caso de Uso]: Os principais componentes do diagrama de Caso de Uso são os atores e as funcionalidades. O diagrama modela o sistema, expressando a relação dos atores com o sistema em si.
+ 
+    
+    \item[Diagrama de Sequência]: O diagrama de sequência, que será utilizado nesse trabalho para validar algumas ações. Como ilustra a \autoref{fig:sequencerumbaugh}, o diagrama de sequência possui um grupo de mensagens que estão organizados em uma sequência de tempo, toda classe é definida como uma linha do tempo, no exemplo da \autoref{fig:sequencerumbaugh}, os objetos ativos são linha temporais exibidas pelas linhas verticais, mostrando os processos que são relacionados com elas durante seu tempo de vida. As mensagem são representadas por setas entre as linhas de tempo.
+    
+        \begin{figure}[H]
+    	    \centering
+        	\caption{\label{fig:sequencerumbaugh} Diagrama de sequência }
+    		\includegraphics[width = 0.8\textwidth]	{diagramas/sequencediagramrumbaugh}
+        	\legend{Fonte: \cite{rumbaugh2017unified}}
+        \end{figure}
+
+
+    
+    \item[Diagrama de Colaboração]: diagramas de colaboração modelam os objetos e links que são significativos dentro de uma interação. O papel das classes descreve o que acontece com um objeto e o papel do associador descreve a relação com a colaboração dos objetos.
+
+    
+    \item[Diagrama de Estados]: A máquina de estados modela as possibilidades de um objeto de uma classe. os principais componentes são os estados e as transições. Cada estado modela uma linha temporal dado determinada condição, condição essa que pode levar o objeto a um novo estado.
+
+      
+    
+    \item[Diagrama de componentes]: os diagramas de componentes modelam os componentes a serem utilizados na implementação de um sistema, definindo dependências entre os componentes, a nível \textit{software}, podendo avaliar o impacto de uma possível mudança nos componentes.
+
+    
 \end{description}
 
 
 
 A utilização de UML nesse trabalho se dará pela utilização de diagramas de sequência que mostrarão como o fluxo do software irã ocorrer. De acordo com \citeonline{rumbaugh2017unified}, diagramas de sequência mostram a iteração em uma forma bidimensional, onde o eixo vertical é o tempo de vida do processo e o eixo horizontal mostra as regras de transição como pode ser visto na Figura~\ref{fig:sequencerumbaugh}. %Essas regras são definidas pelas setas que são os processos do software.
 
-\todo[inline]{Explicar a Figura~\ref{fig:sequencerumbaugh}}
-
-Já \citeonline{Cunha2011FormalContext} diz que diagramas de sequência as ações são organizadas por tempo\todo{Corrigir esta frase}, mas não exploram as relação dos objetos. Os diagramas de sequência mostram todo o processo de trocas de mensagens dos objetos, mapeando todo o ambiente mostrando como os objetos colaboram entre si para obter sucesso. Um exemplo é a \autoref{fig:sequencerumbaugh}, que mostra um diagrama de sequencia, com ator, processos e ações que são executas em certa ordem. 
- \begin{figure}[H]
-	\centering
-    	\caption{\label{fig:sequencerumbaugh} Diagrama de sequência }
-		\includegraphics[width = 0.8\textwidth]	{resources/sequencediagramrumbaugh}
-    	\legend{Fonte: \cite{rumbaugh2017unified}}
-\end{figure}
-
+Já \citeonline{Cunha2011FormalContext} diz que nos diagramas de sequência as ações são organizadas por tempo, mas não exploram as relação dos objetos. Os diagramas de sequência mostram todo o processo de trocas de mensagens dos objetos, mapeando todo o ambiente mostrando como os objetos colaboram entre si para obter sucesso. Um exemplo é a \autoref{fig:sequencerumbaugh}, que mostra um diagrama de sequencia, com ator, processos e ações que são executas em certa ordem. 
 
 
 
@@ -170,7 +186,7 @@ Já \citeonline{Cunha2011FormalContext} diz que diagramas de sequência as açõ
 
 \subsection{Redes de Petri}
 
-Redes de Petri são modelos gráficos e matemáticos que podem ser aplicados em diversos sistemasa\todo{Exemplos}. Um método capaz de descrever e analisar as transições do sistema, podendo ele ser concorrente, assíncrono, distribuído, paralelo e não-determinístico. O modelo gráfico é capaz de auxiliar na visualização do fluxo, e a ferramenta matemática pode estruturar equações matemáticas para validação de propriedades formais do sistema analisado. O comportamento de sistemas pode ser descrito em estados, um estado em uma rede de Petri é alterado de acordo com a regra de transição~\cite{murata:1989}.
+Redes de Petri são modelos gráficos e matemáticos que podem ser aplicados em diversos sistemas, como parte da validação . Um método capaz de descrever e analisar as transições do sistema, podendo ele ser concorrente, assíncrono, distribuído, paralelo e não-determinístico. O modelo gráfico é capaz de auxiliar na visualização do fluxo, e a ferramenta matemática pode estruturar equações matemáticas para validação de propriedades formais do sistema analisado. O comportamento de sistemas pode ser descrito em estados, um estado em uma rede de Petri é alterado de acordo com a regra de transição~\cite{murata:1989}.
 
 \todo[inline]{Apresentar a definição formal de uma RP.}
 
@@ -193,21 +209,8 @@ A visão computacional é uma forma de emular a visão humana, possuindo imagens
 
 \citeonline{bradski:2008} definem uma parte da vasta área da visão computacional como uma transformação de dados de uma imagem em uma nova representação para atingir um objetivo específico, como deixar a imagem em escala de cinza. Essas transformações precisam de contexto, como especificar distância, referências de onde a imagem foi tirada, ou o que pode conter na imagem.
 
-\begin{figure}[h]
-	\caption{\label{fig:grayscaleex}Aplicação de uma equalização de histograma, em nível de cinza, onde a placa do veículo pode ser lida (direita).}
-	\begin{center}
-	    \includegraphics[width=.7\textwidth]{resources/grayscaleex}
-	\end{center}
-	\legend{Fonte: \cite{bradski:2008}}
-\end{figure}
-
-
 De acordo com \citeonline{marengoni:2009}, o processamento da imagem geralmente é a primeira etapa do processo de visão computacional, podendo ser dividido em três níveis: 
 % baixo-nível, nível-médio e alto-nível.
-
-\todo[inline]{Figuras não mencionadas no texto, corrigir}
-
-\todo[inline]{Explicar o resultado das figuras em cada item}
 
 \begin{itemize}
 \item Baixo-nível: 
