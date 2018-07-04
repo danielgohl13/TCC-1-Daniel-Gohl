@@ -40,7 +40,7 @@ Sistemas embarcados derivaram de processadores desenvolvidos para o mercado de c
 Um exemplo de um sistema baseado em microcontrolador é o \textit{Arduino Uno} \cite{Arduino2018ArduinoRev3} que é uma microcontrolador que possui $14$ pinos digitais, $6$ portas analógicas, cristal de quartzo com frequência de $16$Mhz, conexão USB e entrada de alimentação eletrica. O \textit{Arduino} pode ser reescrito várias vezes utilizando um computador e no pior dos casos você pode substituir o microcontrolador com um preço acessível \cite{Arduino2018ArduinoRev3}.
 
 
-Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI}, que segundo \citeonline{RaspberryPi2016DATASHEETCM3L}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}. 
+Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI}, que segundo \citeonline{RaspberryPi2016DATASHEETCM3L}\todo{Corrigir referência}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}. 
 
 
  \begin{figure}[H]
@@ -232,6 +232,8 @@ De acordo com \citeonline{marengoni:2009}, a necessidade de uma etapa de pré-pr
 
 Os filtros são ferramentas básicas que podem remover ruídos de imagens, filtros podem ser espaciais, atuando diretamente na imagem, ou filtros de frequência, necessitando de uma transformação no seu domínio, geralmente essas transformações de domínio são feitas utilizando das transformadas de Fourier, para assim então serem aplicados os filtros e em seguida transformadas novamente para o domínio espacial \cite{marengoni:2009}.
 
+\todo[inline]{Apresentar exemplos de filtros com imagens}
+
 De acordo com \citeonline{gonzalez1992digital}, existem três níveis de processamento de imagens, baixo nível, nível médio, e alto nível. O processamento em baixo nível envolve operações primitivas como processamento para redução de ruídos, aprimoramentos de contraste e aprimoramentos de nitidez. Esse nível é caracterizado por receber como entrada uma imagem e retornar uma imagem como saída. Processamento em nível médio em imagem envolvem tarefas como segmentação que particionam a imagem em regiões, classificando objetos. Esse nível é caracterizado por receber imagens como entrada e retornar atributos extraídos das imagens de entrada, como contornos. O processamento de imagem em alto nível envolve a compreensão do computador na hora do reconhecimento de objetos, realizando funções cognitivas normalmente associadas a visão.
 
 Alguns exemplos de níveis:
@@ -319,6 +321,8 @@ Tensorflow é um \textit{framework} para operações computacionais, tendo uma g
 O campo de aprendizagem de máquina teve grandes progressos nos últimos anos, conseguindo alcançar níveis de abstração de imagem que alcançam a percepção humana. Um tipo de modelo que tem conseguido bons resultados, alcançando e até mesmo ultrapassando a capacidade humana em tarefas de reconhecimento de imagem são as \textbf{redes neurais convolutivas} (\textit{Convonlutional neural network}) \cite{Tensorflow2018}. Redes convolutivas estão no centro da maioria das soluções para problemas de reconhecimento de imagem \cite{SzegedyVISW15}.
 
 O modelo que será utilizado no desenvolvivento desse trabalho será o \textit{Inception}, que segundo \citeonline{SzegedyVISW15} tem custo computacional bem menor que outros modelos, tornando a sua utilização viável para cenários com recursos limitados como em processamento móvel.
+
+\todo[inline]{Apresentar um exemplo com figuras e gráficos de aprendizagem de máquina}
 
 %============= PODEMOS DEIXAR O YOLO PRO TCC???? =================
 
