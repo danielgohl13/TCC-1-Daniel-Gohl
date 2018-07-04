@@ -125,7 +125,10 @@ De acordo com \citeonline{Baier:2008} sistemas de Tecnologia da Informação e C
 
 A dependência do uso de sistemas embarcados tornam sua eficácia fundamental para sociedade. Esses sistemas oferecem um bom desempenho em tempo de resposta e capacidade de processamento. O mal funcionamento desses sistemas podem ameaçar nossas vidas, e podem ter consequências financeiras substanciais para o fabricante. Sistemas TIC eficazes são fundamentais para a sobrevivência de uma empresa \cite{Baier:2008}.
 
-\todo[inline]{Apresentar exemplo de um falha de SE com resultado critico}
+Um exemplo clássico de uma falha catastrófica, é a falha do lançamento do Ariane 5. Em 4 de Junho de 1996, o lançamento do foguete Ariane 5 terminou com uma falha catastrófica, com apenas 40 segundos após o início da sequência de lançamento. As condições de lançamentos eram ideais, nenhum problema climático ou pertubações no campo magnético. O problema no lançamento foi o \textbf{sistema de controle de voo}, mais precisamente no \textbf{sistemas de referência inercial}, causando uma série de reações em cadeia até a auto-destruição do foguete \cite{lions1996ariane}.
+
+Após testes posteriores foi comprovado que o causa técnica foi um erro de operando no momento de conversão do variável do viés horizontal, fazendo o sistema de referência inercial sobrecarregar e parar. foi comprovado que nem todas as operações estavam protegidas após uma análise em todos os códigos que demonstravam risco \cite{lions1996ariane}. 
+
 
 O crescimento na complexidade dos sistemas TIC mostram que eles não estão mais isolados, agora podem fazem parte de um grande sistema, conectando e interagindo com vários outros outros componentes, tornando esses sistemas vulneráveis a erros. 
 A concorrência e o não determinismo que são fundamentais para a modelagem dos sistemas integrados, tornando a utilização de técnicas padrões muito difícil \cite{Baier:2008}.
@@ -143,12 +146,12 @@ Técnicas de verificação são aplicadas a sistemas TIC de forma mais confiáve
 Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)} é uma linguagem de modelagem visual que tem como intuito de utilizar todos os métodos de desenvolvimento de software, extraindo melhor para especificar, visualizar, desenvolver e documentar os artefatos de um sistema em nível de software, capturando estáticas informais e dinâmicas do comportamento de um sistema. Alguns diagramas da UML de acordo com \citeonline{rumbaugh2017unified} são:
 
 \begin{description}
-    \item[Diagrama de Classe]: Os principais componentes do diagrama de classe são classes e suas relações, associação e generalização, mostrando algumas dependências e utilização de cada elemento.
+    \item[Diagrama de Classe:]Os principais componentes do diagrama de classe são classes e suas relações, associação e generalização, mostrando algumas dependências e utilização de cada elemento.
         
-    \item[Diagrama de Caso de Uso]: Os principais componentes do diagrama de Caso de Uso são os atores e as funcionalidades. O diagrama modela o sistema, expressando a relação dos atores com o sistema em si.
+    \item[Diagrama de Caso de Uso:]Os principais componentes do diagrama de Caso de Uso são os atores e as funcionalidades. O diagrama modela o sistema, expressando a relação dos atores com o sistema em si.
  
     
-    \item[Diagrama de Sequência]: O diagrama de sequência, que será utilizado nesse trabalho para validar algumas ações. Como ilustra a \autoref{fig:sequencerumbaugh}, o diagrama de sequência possui um grupo de mensagens que estão organizados em uma sequência de tempo, toda classe é definida como uma linha do tempo, no exemplo da \autoref{fig:sequencerumbaugh}, os objetos ativos são linha temporais exibidas pelas linhas verticais, mostrando os processos que são relacionados com elas durante seu tempo de vida. As mensagem são representadas por setas entre as linhas de tempo.
+    \item[Diagrama de Sequência:]O diagrama de sequência, que será utilizado nesse trabalho para validar algumas ações. Como ilustra a \autoref{fig:sequencerumbaugh}, o diagrama de sequência possui um grupo de mensagens que estão organizados em uma sequência de tempo, toda classe é definida como uma linha do tempo, no exemplo da \autoref{fig:sequencerumbaugh}, os objetos ativos são linha temporais exibidas pelas linhas verticais, mostrando os processos que são relacionados com elas durante seu tempo de vida. As mensagem são representadas por setas entre as linhas de tempo.
     
         \begin{figure}[H]
     	    \centering
@@ -159,14 +162,14 @@ Segundo \citeonline{rumbaugh2017unified} UML (\textit{Unified Modeling Language)
 
 
     
-    \item[Diagrama de Colaboração]: diagramas de colaboração modelam os objetos e links que são significativos dentro de uma interação. O papel das classes descreve o que acontece com um objeto e o papel do associador descreve a relação com a colaboração dos objetos.
+    \item[Diagrama de Colaboração:]O diagramas de colaboração modelam os objetos e links que são significativos dentro de uma interação. O papel das classes descreve o que acontece com um objeto e o papel do associador descreve a relação com a colaboração dos objetos.
 
     
-    \item[Diagrama de Estados]: A máquina de estados modela as possibilidades de um objeto de uma classe. os principais componentes são os estados e as transições. Cada estado modela uma linha temporal dado determinada condição, condição essa que pode levar o objeto a um novo estado.
+    \item[Diagrama de Estados:]A máquina de estados modela as possibilidades de um objeto de uma classe. os principais componentes são os estados e as transições. Cada estado modela uma linha temporal dado determinada condição, condição essa que pode levar o objeto a um novo estado.
 
       
     
-    \item[Diagrama de componentes]: os diagramas de componentes modelam os componentes a serem utilizados na implementação de um sistema, definindo dependências entre os componentes, a nível \textit{software}, podendo avaliar o impacto de uma possível mudança nos componentes.
+    \item[Diagrama de componentes:]Os diagramas de componentes modelam os componentes a serem utilizados na implementação de um sistema, definindo dependências entre os componentes, a nível \textit{software}, podendo avaliar o impacto de uma possível mudança nos componentes.
 
     
 \end{description}
@@ -188,7 +191,24 @@ Já \citeonline{Cunha2011FormalContext} diz que nos diagramas de sequência as a
 
 Redes de Petri são modelos gráficos e matemáticos que podem ser aplicados em diversos sistemas, como parte da validação . Um método capaz de descrever e analisar as transições do sistema, podendo ele ser concorrente, assíncrono, distribuído, paralelo e não-determinístico. O modelo gráfico é capaz de auxiliar na visualização do fluxo, e a ferramenta matemática pode estruturar equações matemáticas para validação de propriedades formais do sistema analisado. O comportamento de sistemas pode ser descrito em estados, um estado em uma rede de Petri é alterado de acordo com a regra de transição~\cite{murata:1989}.
 
-\todo[inline]{Apresentar a definição formal de uma RP.}
+Já \citeonline{peterson:1981} diz que a aplicação das redes de Petri são através de modelagem. Um modelo é uma representação, muitas vezes em termos matemáticos, descrevendo quais são os atributos importantes do sistema estudado. Manipulando a representação do sistema pode facilitar o levantamento de informações sem prejudicar o projeto real, prevendo algum empecilho que possa ocorrer.  
+
+A estrutura de uma rede de Petri graficamente estruturada como um grafo direcionado, que consiste em estados e transições, tendo dois tipos de nós, círculos que representam estados, e barras que representam transições que se conectam com setas aos estados e vice-e-versa, indicando entrada e saída. Redes de Petri são multígrafos bipartidos, uma vez que permitem múltiplas setas partindo de um único nó do grafo até outro, podendo essas setas serem particionadas em dois grupos (estados e transições) e (transições e estados), uma vez que essas setas sejam direcionado a um elemento de outro grupo \cite{peterson:1981}. 
+
+De acordo com \citeonline{murata:1989}. a definição formal de uma rede de Petri é dada por:
+uma rede quíntupla  \(PN = (P, T, F, W, M_0)\), onde:
+
+\begin{description}
+    \centering
+    \item[] \(\textbf{P} = \{p_1, p_2, \ldots , p_m\}\) é um conjunto finito de lugares,
+    \item[] \(\textbf{T} = \{t_1, t_2, \ldots, t_n\}\) é um conjunto finito de transições,
+    \item[] \(\textbf{F} \subseteq (P \times T) \cup (T \times P)\) é um conjunto de arcos (relação de fluxo),
+    \item[] \(\textbf{W}: \textbf{F} \to \{1,2,3,\ldots\}\) é uma função de peso,
+    \item[] \(\textbf{M}_0: \textbf{P} \to \{0,1,2,3,\ldots\}\) é a marcação inicial,
+    \item[] \(\textbf{P} \cap \textbf{T} = \emptyset\) e \(P \cup T \neq \emptyset\)
+
+\end{description}
+   
 
 Segundo \citeonline{rumbaugh2017unified}, ainda que uma máquina de estados seja bem estruturada, um grupo de transições pode levar a sérias inconsistências, incluindo \textit{deadlocks} e outros problemas. Esses problemas foram bastante estudados na teoria das redes de Petri. 
 
@@ -199,7 +219,6 @@ Segundo \citeonline{rumbaugh2017unified}, ainda que uma máquina de estados seja
     	\legend{Regra de transição, (a) aceitação antes da transição \textbf{\textit{t}}. (b) iteração após aceitação de \textbf{\textit{t}}, \textbf{\textit{t}} está desativado.\cite{murata:1989}}
 \end{figure}
 
-\todo[inline]{Seção muito raza, explicar as propriedades de RP com exemplos, e então apresentar um exemplo prático tipo um semaforo.}
 
 \section{Visão Computacional}
 
@@ -209,22 +228,30 @@ A visão computacional é uma forma de emular a visão humana, possuindo imagens
 
 \citeonline{bradski:2008} definem uma parte da vasta área da visão computacional como uma transformação de dados de uma imagem em uma nova representação para atingir um objetivo específico, como deixar a imagem em escala de cinza. Essas transformações precisam de contexto, como especificar distância, referências de onde a imagem foi tirada, ou o que pode conter na imagem.
 
-De acordo com \citeonline{marengoni:2009}, o processamento da imagem geralmente é a primeira etapa do processo de visão computacional, podendo ser dividido em três níveis: 
-% baixo-nível, nível-médio e alto-nível.
+De acordo com \citeonline{marengoni:2009}, a necessidade de uma etapa de pré-processamento é importante quando queremos extrair informações. Essa etapa de pré-processamento envolve o processamento de imagens, que muitas vezes precisam ser convertidas para certo formato ou tamanho com a necessidade de serem filtradas para remoção de ruídos provenientes dos processos de aquisição de imagem, como por exemplo o tipo de sensor utilizando na hora da captura ou até mesmo a iluminação do ambiente assim como condições climáticas.
+
+Os filtros são ferramentas básicas que podem remover ruídos de imagens, filtros podem ser espaciais, atuando diretamente na imagem, ou filtros de frequência, necessitando de uma transformação no seu domínio, geralmente essas transformações de domínio são feitas utilizando das transformadas de Fourier, para assim então serem aplicados os filtros e em seguida transformadas novamente para o domínio espacial \cite{marengoni:2009}.
+
+De acordo com \citeonline{gonzalez1992digital}, existem três níveis de processamento de imagens, baixo nível, nível médio, e alto nível. O processamento em baixo nível envolve operações primitivas como processamento para redução de ruídos, aprimoramentos de contraste e aprimoramentos de nitidez. Esse nível é caracterizado por receber como entrada uma imagem e retornar uma imagem como saída. Processamento em nível médio em imagem envolvem tarefas como segmentação que particionam a imagem em regiões, classificando objetos. Esse nível é caracterizado por receber imagens como entrada e retornar atributos extraídos das imagens de entrada, como contornos. O processamento de imagem em alto nível envolve a compreensão do computador na hora do reconhecimento de objetos, realizando funções cognitivas normalmente associadas a visão.
+
+Alguns exemplos de níveis:
 
 \begin{itemize}
 \item Baixo-nível: 
-	Pode ser associado a operações como redução de ruídos ou níveis de contraste da imagem. 
-   \begin{figure}[h]
+	Pode ser associado a operações como redução de ruídos ou níveis de contraste da imagem \cite{marengoni:2009}. Um exemplo pode ser visto na \autoref{fig:blur}, onde foi aplicado um filtro gaussiano para remoção de ruídos encontrados na imagem. 
+	
+   \begin{figure}[ht]
 	\caption{\label{fig:blur}Aplicação de filtro Gaussiano para remoção de ruídos}
 	\begin{center}
 	    \includegraphics[width=0.3\textwidth]{peachs/blur}
 	\end{center}
 	\legend{Fonte Própria}
 \end{figure} 
+
 \item Nível-médio:
-	São operações associadas a operações de segmentação de imagem ou reconhecimento de objetos na imagem.   
-       \begin{figure}[H]
+	São operações associadas a operações de segmentação de imagem ou reconhecimento de objetos na imagem \cite{marengoni:2009}. Um exemplo é ilustrado na \autoref{fig:segment}, onde foi feita a aplicação de um algoritmo de segmentação com base nas cores da imagem.
+	
+       \begin{figure}[ht]
 	\caption{\label{fig:segment}Segmentação com base nas cores da imagem com sobreposição para identificação de pêssegos.}
 	\begin{center}
 	    \includegraphics[width=0.3\textwidth]{peachs/identified}
@@ -233,8 +260,8 @@ De acordo com \citeonline{marengoni:2009}, o processamento da imagem geralmente 
 \end{figure}
 
 \item Alto-nível:
-São relacionados a tarefas de cognição associadas com a visão humana.
-       \begin{figure}[h]
+São relacionados a tarefas de cognição associadas com a visão humana \cite{marengoni:2009}. Um exemplo pode ser visto na \autoref{fig:machineflow}, onde um \textit{framework} identificou a fruta com base em um modelo de dados, classificando e exibindo o resultado.
+       \begin{figure}[ht]
 	\caption{\label{fig:machineflow}Identificação de objetos utilizando aprendizado de máquina.}
 	\begin{center}
 	    \includegraphics[width=0.3\textwidth]{peachs/tensorflow}
@@ -245,9 +272,6 @@ São relacionados a tarefas de cognição associadas com a visão humana.
 \end{itemize} 
 
 
-\todo[inline]{Apresentar as outras etapas do processo de visão computacional}
-
-
 % ----------------------------------------------
 % ---------------------------------------------- 
 \subsection{Representação de Imagens Digitais}
@@ -255,15 +279,25 @@ Uma imagem pode ser definida como uma função bidimensional, $f(x,y)$, onde $x$
 
 O termo processamento de imagens digitais normalmente se referem ao processamento de imagens bidimensionais por computadores. Uma imagem digital é um vetor de números reais ou números complexos representados por uma quantidade finita de \textit{bits}.
 Na representação de imagem devemos nos preocupar com a caracterização e quantidade de elementos que representam a imagem (\textit{pixels} ou \textit{pels}). Em geral qualquer função bidimensional que contém alguma informação pode ser considerada uma imagem. O principal requisito para o processamento de imagens digitais é que ela seja amostrada e logo em seguida quantificada. A taxa de amostragem, que são os \textit{pixels} por unidade de área, tem de ser grande o suficiente para preservar uma quantidade de informações úteis na imagem. A quantização da imagem é a conversão analógica para digital de uma imagem amostrada para um número finito de níveis de cinza \cite{jain1989fundamentals}.
- \begin{figure}[h]
-	\caption{\label{fig:digitalproc}Típica sequência de processamento de imagem digital.}
+
+ %\begin{figure}[h]
+%	\caption{\label{fig:digitalproc}Típica sequência de processamento de imagem digital.}
+%	\begin{center}
+%	    \includegraphics[width=.9\textwidth]{resources/digitalproc}
+%	\end{center}
+%	\legend{Fonte: \cite{jain1989fundamentals}}
+%\end{figure}
+Na \autoref{fig:matriz} é possível ver a convenção de coordenadas utilizada para representar imagens digitais segundo \citeonline{gonzalez1992digital}. O resultado da amostragem e quantização é uma matriz de números reais. Assumindo que a imagem $f(x,y)$ é amostrada, resultando uma imagem digital que possui $M$ linhas e $N$ colunas.
+
+
+\begin{figure}[h]
+	\caption{\label{fig:matriz}Amostragem de imagem e quantização}
 	\begin{center}
-	    \includegraphics[width=.9\textwidth]{resources/digitalproc}
+	    \includegraphics[width=.9\textwidth]{resources/matriz}
 	\end{center}
-	\legend{Fonte: \cite{jain1989fundamentals}}
+	\legend{Fonte: \cite{gonzalez1992digital}}
 \end{figure}
 
-\todo[inline]{Descrever a representação com exemplos práticos}
 
 %\subsection{Pré-processamento de Imagem}
 
