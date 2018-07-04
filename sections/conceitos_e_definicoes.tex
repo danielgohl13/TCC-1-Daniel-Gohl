@@ -40,7 +40,7 @@ Sistemas embarcados derivaram de processadores desenvolvidos para o mercado de c
 Um exemplo de um sistema baseado em microcontrolador é o \textit{Arduino Uno} \cite{Arduino2018ArduinoRev3} que é uma microcontrolador que possui $14$ pinos digitais, $6$ portas analógicas, cristal de quartzo com frequência de $16$Mhz, conexão USB e entrada de alimentação eletrica. O \textit{Arduino} pode ser reescrito várias vezes utilizando um computador e no pior dos casos você pode substituir o microcontrolador com um preço acessível \cite{Arduino2018ArduinoRev3}.
 
 
-Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI}, que segundo \citeonline{RaspberryPi2016DATASHEETCM3L}\todo{Corrigir referência}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}. 
+Existem também os \textit{Single Board Computers}, um bom exemplo é o \textit{Raspberry PI}, que de acordo com \citeonline{RaspberryPi2016DATASHEETCM3L}, possuem processador e memória integrados, os caracterizando como microcontroladores ou modulo computacional. As vantagens da utilização são por seu baixo custo, baixo consumo energético e alta rentabilidade e grande quantidade de portas para uso geral como pode ser visto no \textit{datasheet} da \autoref{fig:raspsheet}. 
 
 
  \begin{figure}[H]
@@ -230,48 +230,42 @@ A visão computacional é uma forma de emular a visão humana, possuindo imagens
 
 De acordo com \citeonline{marengoni:2009}, a necessidade de uma etapa de pré-processamento é importante quando queremos extrair informações. Essa etapa de pré-processamento envolve o processamento de imagens, que muitas vezes precisam ser convertidas para certo formato ou tamanho com a necessidade de serem filtradas para remoção de ruídos provenientes dos processos de aquisição de imagem, como por exemplo o tipo de sensor utilizando na hora da captura ou até mesmo a iluminação do ambiente assim como condições climáticas.
 
-Os filtros são ferramentas básicas que podem remover ruídos de imagens, filtros podem ser espaciais, atuando diretamente na imagem, ou filtros de frequência, necessitando de uma transformação no seu domínio, geralmente essas transformações de domínio são feitas utilizando das transformadas de Fourier, para assim então serem aplicados os filtros e em seguida transformadas novamente para o domínio espacial \cite{marengoni:2009}.
+Os filtros são ferramentas básicas que podem remover ruídos de imagens, filtros podem ser espaciais, atuando diretamente na imagem, ou filtros de frequência, necessitando de uma transformação no seu domínio, geralmente essas transformações de domínio são feitas utilizando das transformadas de Fourier, para assim então serem aplicados os filtros e em seguida transformadas novamente para o domínio espacial \cite{marengoni:2009}. Algum desses filtros são demonstrados na \autoref{fig:blur} e \autoref{fig:segment}.
 
-\todo[inline]{Apresentar exemplos de filtros com imagens}
 
 De acordo com \citeonline{gonzalez1992digital}, existem três níveis de processamento de imagens, baixo nível, nível médio, e alto nível. O processamento em baixo nível envolve operações primitivas como processamento para redução de ruídos, aprimoramentos de contraste e aprimoramentos de nitidez. Esse nível é caracterizado por receber como entrada uma imagem e retornar uma imagem como saída. Processamento em nível médio em imagem envolvem tarefas como segmentação que particionam a imagem em regiões, classificando objetos. Esse nível é caracterizado por receber imagens como entrada e retornar atributos extraídos das imagens de entrada, como contornos. O processamento de imagem em alto nível envolve a compreensão do computador na hora do reconhecimento de objetos, realizando funções cognitivas normalmente associadas a visão.
 
 Alguns exemplos de níveis:
+\begin{figure}[ht]
+    \centering
+    \caption{Exemplificação dos níveis descritos por \citeonline{gonzalez1992digital}.}
+    \label{fig:svm_classification}
+    \subfloat[Aplicação de filtro Gaussiano para remoção de ruídos \label{fig:blur}]
+        {\includegraphics[width=0.3\textwidth]{peachs/blur}}
+        \hspace{0.1cm}
+    \subfloat[Segmentação com base nas cores da imagem com sobreposição para identificação de pêssegos. \label{fig:segment}]
+        {\includegraphics[width=0.3\textwidth]{peachs/identified}}
+        \legend{Fonte Própria}
+        \hspace{0.1cm}
+    \subfloat[Identificação de objetos utilizando aprendizado de máquina. \label{fig:machineflow}]
+        {\includegraphics[width=0.3\textwidth]{peachs/tensorflow}}
+        \legend{Fonte Própria}
+\end{figure}
 
 \begin{itemize}
 \item Baixo-nível: 
 	Pode ser associado a operações como redução de ruídos ou níveis de contraste da imagem \cite{marengoni:2009}. Um exemplo pode ser visto na \autoref{fig:blur}, onde foi aplicado um filtro gaussiano para remoção de ruídos encontrados na imagem. 
-	
-   \begin{figure}[ht]
-	\caption{\label{fig:blur}Aplicação de filtro Gaussiano para remoção de ruídos}
-	\begin{center}
-	    \includegraphics[width=0.3\textwidth]{peachs/blur}
-	\end{center}
-	\legend{Fonte Própria}
-\end{figure} 
 
 \item Nível-médio:
 	São operações associadas a operações de segmentação de imagem ou reconhecimento de objetos na imagem \cite{marengoni:2009}. Um exemplo é ilustrado na \autoref{fig:segment}, onde foi feita a aplicação de um algoritmo de segmentação com base nas cores da imagem.
 	
-       \begin{figure}[ht]
-	\caption{\label{fig:segment}Segmentação com base nas cores da imagem com sobreposição para identificação de pêssegos.}
-	\begin{center}
-	    \includegraphics[width=0.3\textwidth]{peachs/identified}
-	\end{center}
-	\legend{Fonte Própria}
-\end{figure}
-
 \item Alto-nível:
 São relacionados a tarefas de cognição associadas com a visão humana \cite{marengoni:2009}. Um exemplo pode ser visto na \autoref{fig:machineflow}, onde um \textit{framework} identificou a fruta com base em um modelo de dados, classificando e exibindo o resultado.
-       \begin{figure}[ht]
-	\caption{\label{fig:machineflow}Identificação de objetos utilizando aprendizado de máquina.}
-	\begin{center}
-	    \includegraphics[width=0.3\textwidth]{peachs/tensorflow}
-	\end{center}
-	\legend{Fonte Própria}
-\end{figure}
+
 	
 \end{itemize} 
+
+
 
 
 % ----------------------------------------------
@@ -295,7 +289,7 @@ Na \autoref{fig:matriz} é possível ver a convenção de coordenadas utilizada 
 \begin{figure}[h]
 	\caption{\label{fig:matriz}Amostragem de imagem e quantização}
 	\begin{center}
-	    \includegraphics[width=.9\textwidth]{resources/matriz}
+	    \includegraphics[width=.6\textwidth]{resources/matriz}
 	\end{center}
 	\legend{Fonte: \cite{gonzalez1992digital}}
 \end{figure}
@@ -322,8 +316,15 @@ O campo de aprendizagem de máquina teve grandes progressos nos últimos anos, c
 
 O modelo que será utilizado no desenvolvivento desse trabalho será o \textit{Inception}, que segundo \citeonline{SzegedyVISW15} tem custo computacional bem menor que outros modelos, tornando a sua utilização viável para cenários com recursos limitados como em processamento móvel.
 
-\todo[inline]{Apresentar um exemplo com figuras e gráficos de aprendizagem de máquina}
+\begin{figure}[ht]
+	\caption{\label{fig:tensorflowtrain}Rede Neural com atributos, camadas ocultas e predições.}
+	\begin{center}
+	    \includegraphics[width=\textwidth]{resources/tensorflowtrain}
+	\end{center}
+	\legend{Fonte: \citeonline{tensorflowtrain}}
+\end{figure}
 
+A \autoref{fig:tensorflowtrain} ilustra um exemplo gráfico de uma rede neural profunda criada utilizando  \textit{Tensorflow} \footnote{<http://tensorflow.org>}, demonstrando três predições.
 %============= PODEMOS DEIXAR O YOLO PRO TCC???? =================
 
 
