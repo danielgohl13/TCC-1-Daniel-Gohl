@@ -31,7 +31,7 @@ Mesmo com a necessidade de desenvolvimento de \textit{chips} mais rápidos e mai
 
 Segundo \citeonline{heath:2002}, os computadores modernos (como \textit{desktops} e \textit{laptops}) são baseados em microprocessadores, permitindo-os realizar várias funções, enquanto outros sistemas baseados em microcontroladores, são limitados a apenas um ciclo repetido da mesma tarefa. Os microprocessadores foram originalmente desenvolvidos para substituir as primeiras calculadoras, com chips que de alguma forma pudessem ser reprogramáveis, que ao invés de desenvolver outro chip só mudasse apenas o código.
 
-Ainda por \citeonline{heath:2002}, O termo design de sistemas embarcados abrange uma enorme gama de projetos de microprocessadores, não sendo exclusivamente para um microcontrolador simples, podendo ser um computador pessoal que executa certos \textit{softwares}.\par Microcontroladores são compostos por vários componentes integrados a ele, como RAM, interface de entrada e saída e uma memória re-programável~\cite{white:2011}.
+Ainda por \citeonline{heath:2002}, o termo design de sistemas embarcados abrange uma enorme gama de projetos de microprocessadores, não sendo exclusivamente para um microcontrolador simples, podendo ser um computador pessoal que executa certos \textit{softwares}. Microcontroladores são compostos por vários componentes integrados a ele, como RAM, interface de entrada e saída e uma memória re-programável~\cite{white:2011}.
 
 %Segundo \citeonline{white:2011} define microcontroladores como processadores com componentes atrelados a ele, com memória re-programável
 
@@ -230,7 +230,7 @@ A visão computacional é uma forma de emular a visão humana, possuindo imagens
 
 De acordo com \citeonline{marengoni:2009}, a necessidade de uma etapa de pré-processamento é importante quando queremos extrair informações. Essa etapa de pré-processamento envolve o processamento de imagens, que muitas vezes precisam ser convertidas para certo formato ou tamanho com a necessidade de serem filtradas para remoção de ruídos provenientes dos processos de aquisição de imagem, como por exemplo o tipo de sensor utilizando na hora da captura ou até mesmo a iluminação do ambiente assim como condições climáticas.
 
-Os filtros são ferramentas básicas que podem remover ruídos de imagens, filtros podem ser espaciais, atuando diretamente na imagem, ou filtros de frequência, necessitando de uma transformação no seu domínio, geralmente essas transformações de domínio são feitas utilizando das transformadas de Fourier, para assim então serem aplicados os filtros e em seguida transformadas novamente para o domínio espacial \cite{marengoni:2009}. Algum desses filtros são demonstrados na \autoref{fig:blur} e \autoref{fig:segment}.
+Os filtros são ferramentas básicas que podem remover ruídos de imagens, filtros podem ser espaciais, atuando diretamente na imagem, ou filtros de frequência, necessitando de uma transformação no seu domínio, geralmente essas transformações de domínio são feitas utilizando das transformadas de Fourier, para assim então serem aplicados os filtros e em seguida transformadas novamente para o domínio espacial \cite{marengoni:2009}. Algum desses filtros são demonstrados na Figura \ref{fig:blur} e \autoref{fig:segment}.
 
 
 De acordo com \citeonline{gonzalez1992digital}, existem três níveis de processamento de imagens, baixo nível, nível médio, e alto nível. O processamento em baixo nível envolve operações primitivas como processamento para redução de ruídos, aprimoramentos de contraste e aprimoramentos de nitidez. Esse nível é caracterizado por receber como entrada uma imagem e retornar uma imagem como saída. Processamento em nível médio em imagem envolvem tarefas como segmentação que particionam a imagem em regiões, classificando objetos. Esse nível é caracterizado por receber imagens como entrada e retornar atributos extraídos das imagens de entrada, como contornos. O processamento de imagem em alto nível envolve a compreensão do computador na hora do reconhecimento de objetos, realizando funções cognitivas normalmente associadas a visão.
@@ -254,13 +254,13 @@ Alguns exemplos de níveis:
 
 \begin{itemize}
 \item Baixo-nível: 
-	Pode ser associado a operações como redução de ruídos ou níveis de contraste da imagem \cite{marengoni:2009}. Um exemplo pode ser visto na \autoref{fig:blur}, onde foi aplicado um filtro gaussiano para remoção de ruídos encontrados na imagem. 
+	Pode ser associado a operações como redução de ruídos ou níveis de contraste da imagem \cite{marengoni:2009}. Um exemplo pode ser visto na Figura~\ref{fig:blur}, onde foi aplicado um filtro gaussiano para remoção de ruídos encontrados na imagem. 
 
 \item Nível-médio:
-	São operações associadas a operações de segmentação de imagem ou reconhecimento de objetos na imagem \cite{marengoni:2009}. Um exemplo é ilustrado na \autoref{fig:segment}, onde foi feita a aplicação de um algoritmo de segmentação com base nas cores da imagem.
+	São operações associadas a operações de segmentação de imagem ou reconhecimento de objetos na imagem \cite{marengoni:2009}. Um exemplo é ilustrado na Figura~\ref{fig:segment}, onde foi feita a aplicação de um algoritmo de segmentação com base nas cores da imagem.
 	
 \item Alto-nível:
-São relacionados a tarefas de cognição associadas com a visão humana \cite{marengoni:2009}. Um exemplo pode ser visto na \autoref{fig:machineflow}, onde um \textit{framework} identificou a fruta com base em um modelo de dados, classificando e exibindo o resultado.
+São relacionados a tarefas de cognição associadas com a visão humana \cite{marengoni:2009}. Um exemplo pode ser visto na Figura~\ref{fig:machineflow}, onde um \textit{framework} identificou a fruta com base em um modelo de dados, classificando e exibindo o resultado.
 
 	
 \end{itemize} 
@@ -325,6 +325,7 @@ O modelo que será utilizado no desenvolvivento desse trabalho será o \textit{I
 \end{figure}
 
 A \autoref{fig:tensorflowtrain} ilustra um exemplo gráfico de uma rede neural profunda criada utilizando  \textit{Tensorflow} \footnote{<http://tensorflow.org>}, demonstrando três predições.
+
 %============= PODEMOS DEIXAR O YOLO PRO TCC???? =================
 
 
