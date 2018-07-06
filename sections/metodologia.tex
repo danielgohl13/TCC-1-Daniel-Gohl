@@ -50,7 +50,7 @@ Além do aplicativo de auxilio, o sistema conta com um modulo de classificação
 \begin{figure}[ht]
 	\caption{\label{fig:fluxcentral}  Fluxo de funcionamento do sistema proposto.}
 	 \begin{center}
-		\includegraphics[width = 0.5\textwidth]			{resources/Fluxo-central}
+		\includegraphics[width = 0.61\textwidth]			{resources/Fluxo-central}
     \end{center}
     \legend{Fonte Própria}
 \end{figure}
@@ -78,14 +78,14 @@ Detalhando o diagrama \autoref{fig:seqkraken}:
 
 \section{Análise dos dados na central de processamento}
 
-Como ilustra a \autoref{fig:fluxoprocesso}, após a coleta das imagens captados pelos sensores de captura (como câmeras) as imagens serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} \cite{opencv} para os filtros de pré-processamento afim de melhorar a qualidade da imagem, caso seja necessário, e adequá-las para classificação usando o \textit{Tensorflow}, previamente modelado utilizando \textit{Inception}, para retreinar as últimas camadas da sua rede neural. afim de . 
+Como ilustra a \autoref{fig:fluxoprocesso}, após a coleta das imagens captados pelos sensores de captura (como câmeras) as imagens serão enviadas através de uma rede \textit{Wireless} para a Central, onde serão processados pelo módulo de Classificação que utilizará \textit{OpenCV} \cite{opencv} para os filtros de pré-processamento, afim de melhorar a qualidade da imagem coletada. A classificação é então executada nas imagens já processadas, usando o \textit{Tensorflow} que foi previamente modelado utilizando \textit{Inception}, para retreinar as últimas camadas da sua rede neural. 
+% 
 Após o processamento da imagem, será gerado um relatório sobre os dados processados dessa imagem e o resultado da classificação, exibindo um infográfico mostrando os resultados.
 
-
-\begin{figure}[ht]
+\begin{figure}[htbp]
 	\centering
     \caption{\label{fig:fluxoprocesso}Fluxo de Processos do Sistema Computacional Proposto}
-	\includegraphics[width = 0.8\textwidth]{resources/fluxo-de-processo.png}
+	\includegraphics[width = 0.6\textwidth]{resources/fluxo-de-processo.png}
     \legend{Fonte Própria}
 \end{figure}
 
@@ -109,7 +109,7 @@ De acordo com \citeonline{bazeille2006}, o filtro homomórfico pode ser utilizad
 	\includegraphics[width = 0.4\textwidth]{resources/homomo1.png}
     \legend{Adaptada de \citeonline{bazeille2006}}
 \end{figure}
-
+% \newpage
 
 
 \subsubsection{Filtro Anisotrópico}
@@ -135,10 +135,10 @@ Segundo \citeonline{bazeille2006}, o filtro anisotrópico permite simplificar os
 
 A estrutura da Boia, que é ilustrada na \autoref{fig:blueprint}, que visa baixo custo, utilizará materiais que podem ser encontrados com facilidade, como canos de PVC para a sustentação dos sensores e placas, tendo grande potencial para extensões ou modificações como alterar a estrutura para adicionar outro tipos de motores.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
 	\centering
-    \caption{\label{fig:blueprint} Descrição da construção da Boia.}
-	\includegraphics[width = \textwidth]{resources/blueprint.png}
+      \caption{\label{fig:blueprint} Descrição da construção da Boia.}
+	\includegraphics[width = 0.5\textwidth]{resources/blueprint.png}
     \legend{Fonte Própria}
 \end{figure}
 
