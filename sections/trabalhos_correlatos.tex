@@ -72,14 +72,23 @@ A utilização do trabalho de \citeonline{Chuang2016AImages} como referência ir
 
 O trabalho de \citeonline{FORESTI2000AImages} propõe um sistema (veículo autônomo) para detecção e rastreio de objetos submersos em água, conforme fluxograma na ~\autoref{fig:forestflow}, o sistema faz detecção automática de canos (que podem se estender por quilômetros) e posicionamento autônomo baseado nas detecções.
 
-No método proposto por \citeonline{FORESTI2000AImages} é aplicado uma técnica para compensação de cor (alterando valores nos canais de cores) devido as pertubações luminosas, e dimensionamento na imagem. Depois do dimensionamento essas imagens ganham tamanhos de $1/16$ para detecção de bordas (para encontrar canos) e $1/32$ para encontrar anodos em canos.
-\begin{figure}[h]
+\begin{figure}[!htbp]
 	\caption{\label{fig:forestflow}Proposta do sistema.}
 	\begin{center}
 	    \includegraphics[width=0.5\textwidth]{resources/flowchartforest}
 	\end{center}
 	\legend{Fonte: \cite{FORESTI2000AImages}}
 \end{figure}
+
+No método proposto por \citeonline{FORESTI2000AImages} é aplicado uma técnica para compensação de cor (alterando valores nos canais de cores) devido as pertubações luminosas, e dimensionamento na imagem. Depois do dimensionamento essas imagens ganham tamanhos de $1/16$ para detecção de bordas (para encontrar canos) e $1/32$ para encontrar anodos em canos.
+
+% \begin{figure}[!htbp]
+% 	\caption{\label{fig:forestflow}Proposta do sistema.}
+% 	\begin{center}
+% 	    \includegraphics[width=0.5\textwidth]{resources/flowchartforest}
+% 	\end{center}
+% 	\legend{Fonte: \cite{FORESTI2000AImages}}
+% \end{figure}
 
 A identificação dos objetos é feita utilizando redes neurais, que classificando a imagem em tempo real, verificando se há obstáculos. Essas informações auxiliam na navegação automática do veículo, traçando rotas e caminhos através das imagens processadas e ressonância geométrica.
 
